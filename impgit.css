@@ -24,7 +24,8 @@ p{font-family:var(--fb)!important;font-weight:400;font-size:clamp(1rem,0.95rem +
 .md-header.layout3 .wrapper .submenu.hidden-scrollbar>.menu-item:hover>a{color:#1D4E6B!important}
 .md-header.layout3 .head-menu>.menu-item.has-child>.wrapper{border-radius:4px!important;overflow:hidden;opacity:0;transition:opacity .4s ease}
 .md-header.layout3 .head-menu>.menu-item.has-child:hover>.wrapper{opacity:1}
-.md-house.layout8 .house-info .addressAndprice .address-wrap p,.md-house.layout8 .house-info .mls-box p{color:#fff!important}
+.md-house.layout8 .house-info .addressAndprice .address-wrap p{color:#fff!important}
+.md-house.layout8 .house-info .mls-box p,.md-house.layout8 .mls-box p{color:#fff!important}
 .md-house.layout8 .house-next.iconfont,.md-house.layout8 .house-prev.iconfont{color:var(--gold)!important}
 .search-result-drawer .house-grid-container .house-detail h3,.search-result-drawer .search-result-house-list .house-table-column.address h3{font-family:var(--fb)!important;font-size:1.2em!important;font-weight:500!important;letter-spacing:0!important;line-height:1.3!important;max-width:none!important}
 .search-result-drawer .search-result-header h1{font-size:var(--h3s)!important;font-weight:500!important;line-height:1.16!important;letter-spacing:0!important;max-width:none!important;width:100%!important}
