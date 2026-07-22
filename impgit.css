@@ -1,0 +1,20 @@
+:root{--fs:'Cormorant Garamond',serif;--fb:'Jost',sans-serif;--ink:#16181c;--body:#454a52;--gold:#e8b33d;--goldh:#E7AF36;--lt:#f7f6f2;--ease:.3s ease;--h2s:clamp(2.1rem,1.7rem + 1.6vw,3.25rem);--h3s:clamp(1.5rem,1.3rem + 0.8vw,2.1rem)}
+h1,h2,h3,h4,p,[aria-level]{margin:0!important;padding:0!important}
+h1,h2,h3,h4,[aria-level]{font-family:var(--fs)!important;line-height:.98!important;letter-spacing:-.01em!important;max-width:20ch!important;color:var(--ink)!important;font-weight:400!important}
+h1,[aria-level="1"]{font-size:clamp(2.75rem,2.1rem + 2.6vw,5rem)!important}
+h2,[aria-level="2"]{font-size:var(--h2s)!important}
+h3,[aria-level="3"]{font-size:var(--h3s)!important}
+h4,[aria-level="4"]{font-size:clamp(1.2rem,1.1rem + 0.4vw,1.5rem)!important}
+p{font-family:var(--fb)!important;font-weight:400;font-size:clamp(1rem,0.95rem + 0.2vw,1.125rem)!important;line-height:1.7!important;max-width:62ch!important;color:var(--body)!important}
+.eb{font-family:var(--fb)!important;font-weight:500;font-size:11px!important;letter-spacing:.28em!important;text-transform:uppercase;color:#a8a094!important;display:flex;align-items:center;gap:14px}
+.eb::before,.eb::after{content:"";height:1px;width:32px;background:currentColor;opacity:.5}
+.em{font-style:italic;font-weight:500;color:inherit}
+.tl,.tl h1,.tl h2,.tl h3,.tl h4,.tl p,.tl .eb{color:var(--lt)!important;text-shadow:0 2px 20px rgba(0,0,0,.4)}
+.td,.td h1,.td h2,.td h3,.td h4,.td p,.td .eb{color:var(--ink)!important;text-shadow:none!important}
+.b,.btn-item,button{font-family:var(--fb)!important;font-weight:500!important;font-size:1rem!important;letter-spacing:.01em!important;line-height:1!important;border-radius:10px!important;padding:.95em 1.9em!important;border:none!important;cursor:pointer!important;transition:background-color .25s ease,border-color .25s ease!important}
+.bp,.btn-item{background:var(--gold)!important;color:var(--lt)!important}
+.bp:hover,.btn-item:hover{background:var(--goldh)!important}
+.bs{background:rgba(255,255,255,.16)!important;backdrop-filter:blur(12px)!important;-webkit-backdrop-filter:blur(12px)!important;border:1px solid rgba(255,255,255,.35)!important;color:var(--lt)!important}
+.bs:hover{background:rgba(255,255,255,.24)!important;border-color:rgba(255,255,255,.5)!important}
+.ar{display:flex;gap:16px;margin-top:12px;flex-wrap:wrap;justify-content:center}
+.sc{padding:120px 32px}
