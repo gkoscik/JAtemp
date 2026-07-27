@@ -475,159 +475,11 @@ p {
   .about__content { padding-bottom: 36px; }
 }
 
-/* ============================================================
-   CONTACT FORM SECTION — native md-form, restyled
-   ============================================================ */
-.contact-form-wrap {
-  padding: 100px 32px;
-  display: flex;
-  justify-content: center;
-}
-.contact-form-wrap .md-form-outer,
-.contact-form-wrap .md-form-container {
-  width: 100%;
-  max-width: 640px;
-}
-.contact-form-wrap .md-form-content {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  margin-top: 8px;
-}
-.contact-form-wrap .basic-info {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-}
-.contact-form-wrap .v-input.question,
-.contact-form-wrap .form-group.si-form__full {
-  grid-column: 1 / -1;
-}
-.contact-form-wrap .input-container,
-.contact-form-wrap .form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.contact-form-wrap .label-top,
-.contact-form-wrap .control-label {
-  font-family: var(--font-sans) !important;
-  font-size: 11px !important;
-  letter-spacing: 0.14em !important;
-  text-transform: uppercase;
-  color: #a8a094 !important;
-}
-.contact-form-wrap input[type="text"],
-.contact-form-wrap input[type="email"],
-.contact-form-wrap input[type="tel"],
-.contact-form-wrap textarea,
-.contact-form-wrap select {
-  font-family: var(--font-sans) !important;
-  font-size: 1rem !important;
-  color: var(--color-ink) !important;
-  background: #fff !important;
-  border: 1px solid rgba(22,24,28,0.15) !important;
-  border-radius: 8px !important;
-  padding: 0.85em 1em !important;
-  width: 100%;
-  box-sizing: border-box;
-  transition: border-color var(--ease) !important;
-  appearance: none;
-  -webkit-appearance: none;
-}
-.contact-form-wrap select {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%23454a52' stroke-width='1.5' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 1em center;
-  padding-right: 2.4em !important;
-}
-.contact-form-wrap textarea {
-  min-height: 130px;
-  resize: vertical;
-}
-.contact-form-wrap input::placeholder,
-.contact-form-wrap textarea::placeholder {
-  color: #a3a8b0 !important;
-}
-.contact-form-wrap input:focus,
-.contact-form-wrap textarea:focus,
-.contact-form-wrap select:focus {
-  outline: none !important;
-  border-color: var(--color-gold) !important;
-}
-.contact-form-wrap .submit-content {
-  margin-top: 6px;
-}
-.contact-form-wrap .submit-box .submit {
-  font-family: var(--font-sans) !important;
-  font-weight: 500 !important;
-  font-size: 1rem !important;
-  letter-spacing: 0.01em !important;
-  background: var(--color-gold) !important;
-  color: var(--color-offwhite) !important;
-  border: none !important;
-  border-radius: 10px !important;
-  padding: 0.95em 1.9em !important;
-  width: 100%;
-  cursor: pointer !important;
-  transition: background-color var(--ease) !important;
-}
-.contact-form-wrap .submit-box .submit:hover:not(.submit-disabled) {
-  background: var(--color-gold-hover) !important;
-}
-.contact-form-wrap .submit-box .submit.submit-disabled {
-  opacity: 0.5;
-  cursor: not-allowed !important;
-}
-.contact-form-wrap .disclaimer-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-top: 4px;
-}
-.contact-form-wrap .disclaimer-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
-.contact-form-wrap .disclaimer-content p {
-  font-family: var(--font-sans) !important;
-  font-size: 0.8rem !important;
-  line-height: 1.6 !important;
-  max-width: none !important;
-  color: #7c8089 !important;
-}
-.contact-form-wrap .disclaimer-content .privacy-link {
-  color: #1D4E6B;
-  text-decoration: underline;
-}
-.contact-form-wrap .check-box-container {
-  width: 18px;
-  height: 18px;
-  min-width: 18px;
-  border-radius: 4px;
-  border: 1px solid rgba(22,24,28,0.25) !important;
-  margin-top: 2px;
-  cursor: pointer;
-}
-.contact-form-wrap .form-toast {
-  border-radius: 12px;
-}
-.contact-form-wrap .toast-content {
-  font-family: var(--font-sans) !important;
-  color: var(--color-ink) !important;
-}
 
-@media (max-width: 600px) {
-  .contact-form-wrap { padding: 64px 24px; }
-  .contact-form-wrap .basic-info { grid-template-columns: 1fr; gap: 16px; }
-}
 
-/* ============================================================
-   CONSULTATION PAGE — HERO
-   Shorter than main hero (56vh vs 100vh), same media-section
-   pattern, own class since height differs.
-   ============================================================ */
+
+
+
 .consult-hero {
   min-height: 420px;
 }
@@ -636,6 +488,11 @@ p {
   gap: 20px;
   padding: 0 32px;
 }
+
+
+
+
+
 
 /* ============================================================
    LEAD FORM (md-lead-form standard) — banner-style capture form
