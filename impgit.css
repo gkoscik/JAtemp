@@ -334,3 +334,75 @@ p {
   .media-section__content { padding: 10vh 24px; }
   .hero { min-height: 560px; }
 }
+
+/* ============================================================
+   STATS BAND SECTION
+   ============================================================ */
+.stats-band {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+  background: linear-gradient(160deg, #1D4E6B 0%, #152233 100%);
+  padding: 64px;
+  display: flex;
+  justify-content: center;
+}
+.stats-band__inner {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.stats-band__grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.stats-band__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 0 32px;
+  text-align: center;
+}
+.stats-band__item + .stats-band__item {
+  border-left: 1px solid rgba(247,246,242,0.15);
+}
+.stats-band__item .eyebrow { justify-content: center; }
+.stats-band__item .eyebrow::before,
+.stats-band__item .eyebrow::after { display: none; } /* no flanking lines in this section */
+
+.stats-band__number {
+  font-size: clamp(2.75rem, 2rem + 3vw, 4.25rem) !important;
+  font-weight: 600 !important;
+  max-width: none !important;
+}
+.stats-band__caption {
+  text-align: center;
+  font-size: clamp(1rem, 0.95rem + 0.2vw, 1.125rem) !important;
+  max-width: none;
+  margin-top: 12px !important;
+  padding-top: 20px !important;
+  border-top: 1px solid rgba(247,246,242,0.12);
+  color: #c9c4b8 !important;
+}
+
+@media (max-width: 1080px) {
+  .stats-band { padding: 56px 32px; }
+}
+@media (max-width: 600px) {
+  .stats-band { padding: 48px 20px; }
+  .stats-band__grid { grid-template-columns: 1fr; gap: 32px; }
+  .stats-band__item + .stats-band__item {
+    border-left: none;
+    border-top: 1px solid rgba(247,246,242,0.15);
+    padding-top: 32px;
+  }
+}
