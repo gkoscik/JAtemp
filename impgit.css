@@ -440,22 +440,55 @@ p {
 .about__contact a:hover { color: var(--color-ink) !important; }
 
 /* ============================================================
+   CONSULTATION INTRO — header/subheader above the native form.
+   Real classes instead of inline styles for guaranteed centering.
+   Lighter/cleaner palette: softer borders, airier spacing.
+   ============================================================ */
+.consult-intro {
+  padding: 100px 32px 48px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.consult-intro__inner {
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.consult-intro .eyebrow {
+  justify-content: center;
+}
+.consult-intro h2 {
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+.consult-intro p {
+  margin: 0 auto !important;
+  text-align: center !important;
+  color: #6b7078 !important;
+}
+
+/* ============================================================
    CONTACT FORM SECTION — native md-form, restyled
    Wrapper class .contact-form-wrap applied to the native block's
    outer container via style override. Selects (.contact-form-wrap
    select) are custom-added fields, not Lofty defaults — see Bible
    for why data-uw-rm-form="nfx" and name attributes must stay
-   untouched. Status: ON HOLD, see notes at bottom of this doc.
+   untouched. Layout matches the reference screenshot (2-col grid,
+   centered auto-width submit button); colors/type/spacing match
+   the rest of the site's design system, not the reference image.
    ============================================================ */
 .contact-form-wrap {
-  padding: 100px 32px;
+  padding: 48px 32px 100px;
   display: flex;
   justify-content: center;
 }
 .contact-form-wrap .md-form-outer,
 .contact-form-wrap .md-form-container {
   width: 100%;
-  max-width: 640px;
+  max-width: 720px;
 }
 .contact-form-wrap .md-form-content {
   display: flex;
@@ -495,9 +528,9 @@ p {
   font-size: 1rem !important;
   color: var(--color-ink) !important;
   background: #fff !important;
-  border: 1px solid rgba(22,24,28,0.15) !important;
-  border-radius: 8px !important;
-  padding: 0.85em 1em !important;
+  border: 1px solid rgba(22,24,28,0.10) !important;
+  border-radius: 10px !important;
+  padding: 0.9em 1.1em !important;
   width: 100%;
   box-sizing: border-box;
   transition: border-color var(--ease) !important;
@@ -526,6 +559,12 @@ p {
 }
 .contact-form-wrap .submit-content {
   margin-top: 6px;
+  display: flex;
+  justify-content: center;
+}
+.contact-form-wrap .submit-box {
+  display: flex;
+  justify-content: center;
 }
 .contact-form-wrap .submit-box .submit {
   font-family: var(--font-sans) !important;
@@ -536,8 +575,9 @@ p {
   color: var(--color-offwhite) !important;
   border: none !important;
   border-radius: 10px !important;
-  padding: 0.95em 1.9em !important;
-  width: 100%;
+  padding: 0.95em 2.4em !important;
+  width: auto;
+  min-width: 220px;
   cursor: pointer !important;
   transition: background-color var(--ease) !important;
 }
@@ -795,6 +835,7 @@ p {
   .about__inner { grid-template-columns: 1fr; gap: 0; align-items: stretch; }
   .about__content { order: 1; padding-bottom: 48px; }
   .about__photo { order: 2; max-width: 420px; margin: 0 auto; }
+  .contact-form-wrap .basic-info { grid-template-columns: 1fr; gap: 16px; }
 }
 
 @media (max-width: 600px) {
@@ -815,7 +856,6 @@ p {
   .about { padding: 64px 24px 0; }
   .about__content { padding-bottom: 36px; }
   .contact-form-wrap { padding: 64px 24px; }
-  .contact-form-wrap .basic-info { grid-template-columns: 1fr; gap: 16px; }
   .md-lead-form.standard .media-content.column {
     padding: 48px 24px;
     gap: 24px;
