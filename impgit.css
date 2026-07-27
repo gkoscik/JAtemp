@@ -648,13 +648,17 @@ p {
 
 /* ============================================================
    LEAD FORM (md-lead-form standard) — banner-style capture form
-   Status: styling written, NOT YET CONFIRMED LIVE — see notes at
-   bottom of this doc. Verify selectors against live DOM before
-   assuming these rules are matching correctly.
+   Status: CONFIRMED LIVE. Light theme per instruction — off-white
+   section background instead of dark/photo. Centering fixed: the
+   real parent chain is .media-info > .title-text > .media-title,
+   .media-subtitle — .title-text was missing from the flex/center
+   chain, which is why centering silently failed before. Title
+   element is a <p> tag (not h2), subtitle is <h3> — verified
+   against live DOM, not assumed from markup paste.
    ============================================================ */
 .md-lead-form.standard .single-picture {
   background-image: none !important;
-  background-color: var(--color-ink) !important;
+  background-color: var(--color-offwhite) !important;
 }
 .md-lead-form.standard .banner-mask {
   display: none !important;
@@ -664,6 +668,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--color-offwhite) !important;
 }
 .md-lead-form.standard .media-content.column {
   display: flex;
@@ -681,27 +686,47 @@ p {
   align-items: center;
   text-align: center;
   gap: 12px;
+  width: 100%;
 }
-.md-lead-form.standard .media-title,
-.md-lead-form.standard .media-title h2 {
+.md-lead-form.standard .title-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  width: 100%;
+}
+.md-lead-form.standard .media-title {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.md-lead-form.standard .media-title p {
   font-family: var(--font-serif) !important;
   font-size: var(--h2-size) !important;
   font-weight: 400 !important;
-  color: var(--color-offwhite) !important;
+  color: var(--color-ink) !important;
   line-height: 0.98 !important;
   letter-spacing: -0.01em !important;
   max-width: 18ch !important;
   text-align: center !important;
+  margin: 0 auto !important;
 }
-.md-lead-form.standard .media-subtitle,
+.md-lead-form.standard .media-subtitle {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 .md-lead-form.standard .media-subtitle h3 {
   font-family: var(--font-sans) !important;
   font-size: 1rem !important;
   font-weight: 400 !important;
-  color: #c9c4b8 !important;
+  color: var(--color-body) !important;
   line-height: 1.6 !important;
+  letter-spacing: normal !important;
   max-width: 42ch !important;
   text-align: center !important;
+  margin: 0 auto !important;
 }
 .md-lead-form.standard .lead-form {
   display: flex;
@@ -713,6 +738,8 @@ p {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  width: 100%;
+  box-sizing: border-box;
 }
 .md-lead-form.standard .label-top {
   font-family: var(--font-sans) !important;
@@ -728,10 +755,10 @@ p {
   font-family: var(--font-sans) !important;
   font-size: 1rem !important;
   color: var(--color-ink) !important;
-  background: rgba(247,246,242,0.96) !important;
-  border: 1px solid rgba(247,246,242,0.25) !important;
-  border-radius: 8px !important;
-  padding: 0.85em 1em !important;
+  background: #fff !important;
+  border: 1px solid rgba(22,24,28,0.10) !important;
+  border-radius: 10px !important;
+  padding: 0.9em 1.1em !important;
   width: 100%;
   box-sizing: border-box;
   transition: border-color var(--ease) !important;
@@ -742,7 +769,7 @@ p {
 }
 .md-lead-form.standard input::placeholder,
 .md-lead-form.standard textarea::placeholder {
-  color: #8a8f98 !important;
+  color: #a3a8b0 !important;
 }
 .md-lead-form.standard input:focus,
 .md-lead-form.standard textarea:focus {
@@ -754,15 +781,17 @@ p {
   font-weight: 500 !important;
   font-size: 1rem !important;
   letter-spacing: 0.01em !important;
+  line-height: 1 !important;
   background: var(--color-gold) !important;
   color: var(--color-offwhite) !important;
   border: none !important;
   border-radius: 10px !important;
   padding: 0.95em 1.9em !important;
-  width: 100%;
+  width: auto;
+  align-self: center;
   cursor: pointer !important;
   margin-top: 4px;
-  transition: background-color var(--ease) !important;
+  transition: background-color 0.25s ease, border-color 0.25s ease !important;
 }
 .md-lead-form.standard .submit p {
   font-family: inherit !important;
@@ -796,10 +825,10 @@ p {
   font-size: 0.78rem !important;
   line-height: 1.6 !important;
   max-width: none !important;
-  color: #c9c4b8 !important;
+  color: #7c8089 !important;
 }
 .md-lead-form.standard .disclaimer-content .privacy-link {
-  color: var(--color-offwhite);
+  color: #1D4E6B;
   text-decoration: underline;
 }
 .md-lead-form.standard .check-box-container {
@@ -807,7 +836,7 @@ p {
   height: 18px;
   min-width: 18px;
   border-radius: 4px;
-  border: 1px solid rgba(247,246,242,0.4) !important;
+  border: 1px solid rgba(22,24,28,0.25) !important;
   margin-top: 2px;
   cursor: pointer;
   background: none !important;
@@ -817,7 +846,7 @@ p {
 }
 .md-lead-form.standard .toast-content {
   font-family: var(--font-sans) !important;
-  color: var(--color-offwhite) !important;
+  color: var(--color-ink) !important;
 }
 
 /* ============================================================
