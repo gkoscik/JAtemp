@@ -1,216 +1,7 @@
 /* ============================================================
-   FONTS + VARIABLES
-   ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
-
-:root {
-  --font-serif: 'Cormorant Garamond', serif;
-  --font-sans: 'Jost', sans-serif;
-  --color-ink: #16181c;
-  --color-body: #454a52;
-  --color-gold: #e8b33d;
-  --color-gold-hover: #E7AF36;
-  --color-offwhite: #f7f6f2;
-  --ease: 0.3s ease;
-  --h2-size: clamp(2.1rem, 1.7rem + 1.6vw, 3.25rem);
-  --h3-size: clamp(1.5rem, 1.3rem + 0.8vw, 2.1rem);
-}
-
-/* ============================================================
-   TYPOGRAPHY — base heading/paragraph system
-   Also targets [aria-level] since Lofty fakes headings with
-   divs like <div role="heading" aria-level="1"> in some blocks
-   ============================================================ */
-h1, h2, h3, h4, p, [aria-level] {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-h1, h2, h3, h4, [aria-level] {
-  font-family: var(--font-serif) !important;
-  line-height: 0.98 !important;
-  letter-spacing: -0.01em !important;
-  max-width: 20ch !important;
-  color: var(--color-ink) !important;
-  font-weight: 400 !important;
-}
-
-h1, [aria-level="1"] { font-size: clamp(2.75rem, 2.1rem + 2.6vw, 5rem) !important; }
-h2, [aria-level="2"] { font-size: var(--h2-size) !important; }
-h3, [aria-level="3"] { font-size: var(--h3-size) !important; }
-h4, [aria-level="4"] { font-size: clamp(1.2rem, 1.1rem + 0.4vw, 1.5rem) !important; }
-
-p {
-  font-family: var(--font-sans) !important;
-  font-weight: 400;
-  font-size: clamp(1rem, 0.95rem + 0.2vw, 1.125rem) !important;
-  line-height: 1.7 !important;
-  max-width: 62ch !important;
-  color: var(--color-body) !important;
-}
-
-/* ============================================================
-   EYEBROW — small tracked-out label above headings
-   ============================================================ */
-.eyebrow {
-  font-family: var(--font-sans) !important;
-  font-weight: 500;
-  font-size: 11px !important;
-  letter-spacing: 0.28em !important;
-  text-transform: uppercase;
-  color: #a8a094 !important;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.eyebrow::before,
-.eyebrow::after {
-  content: "";
-  height: 1px;
-  width: 32px;
-  background: currentColor;
-  opacity: 0.5;
-}
-
-/* ============================================================
-   TEXT UTILITIES
-   ============================================================ */
-.text-emphasis {
-  font-style: italic;
-  font-weight: 500;
-  color: inherit;
-}
-
-/* Light text override — use on any section with a dark/photo background */
-.text-light,
-.text-light h1, .text-light h2, .text-light h3, .text-light h4,
-.text-light p, .text-light .eyebrow {
-  color: var(--color-offwhite) !important;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.4);
-}
-
-/* Dark text override — explicit, for light-colored (non-white) backgrounds */
-.text-dark,
-.text-dark h1, .text-dark h2, .text-dark h3, .text-dark h4,
-.text-dark p, .text-dark .eyebrow {
-  color: var(--color-ink) !important;
-  text-shadow: none !important;
-}
-
-/* ============================================================
-   BUTTONS
-   ============================================================ */
-.btn, .btn-item, button {
-  font-family: var(--font-sans) !important;
-  font-weight: 500 !important;
-  font-size: 1rem !important;
-  letter-spacing: 0.01em !important;
-  line-height: 1 !important;
-  border-radius: 10px !important;
-  padding: 0.95em 1.9em !important;
-  border: none !important;
-  cursor: pointer !important;
-  transition: background-color 0.25s ease, border-color 0.25s ease !important;
-}
-
-.btn-primary, .btn-item {
-  background: var(--color-gold) !important;
-  color: var(--color-offwhite) !important;
-}
-.btn-primary:hover, .btn-item:hover {
-  background: var(--color-gold-hover) !important;
-}
-
-.btn-secondary {
-  background: rgba(255,255,255,0.16) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  border: 1px solid rgba(255,255,255,0.35) !important;
-  color: var(--color-offwhite) !important;
-}
-.btn-secondary:hover {
-  background: rgba(255,255,255,0.24) !important;
-  border-color: rgba(255,255,255,0.5) !important;
-}
-
-.actions-row {
-  display: flex;
-  gap: 16px;
-  margin-top: 12px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-/* ============================================================
-   LAYOUT — generic section padding + full-bleed media pattern
-   ============================================================ */
-.section {
-  padding: 120px 32px;
-}
-
-/* Full-bleed photo/video section wrapper — breaks out of Lofty's
-   .mg-container width constraint. Pair with .mg-container:has()
-   override below, scoped per-section as needed. */
-.media-section {
-  position: relative;
-  width: 100vw;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-.media-section__bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  will-change: transform;
-  z-index: 0;
-}
-.scrim {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    radial-gradient(60% 55% at 50% 52%, rgba(21,34,51,0.42) 0%, rgba(21,34,51,0.32) 45%, rgba(21,34,51,0.2) 70%, rgba(21,34,51,0.25) 100%),
-    linear-gradient(0deg, rgba(21,34,51,0.35) 0%, rgba(21,34,51,0.08) 55%, rgba(21,34,51,0.18) 100%);
-}
-.media-section__content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 18vh 32px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 26px;
-}
-
-/* Hero-specific height marker */
-.hero {
-  min-height: 100vh;
-}
-
-/* Lofty wraps embeds in .mg-container (overflow:hidden, max-width capped).
-   These :has() rules let full-bleed sections escape it. Scoped per-block
-   below where needed — add a new line here if a future section also
-   needs to break out. */
-.mg-container:has(.media-section) { overflow: visible !important; max-width: 100% !important; }
-.mg-container:has(.stats-band) { overflow: visible !important; max-width: 100% !important; }
-.mg-container:has(.about) { overflow: visible !important; max-width: 100% !important; }
-
-/* Removes default bottom margin Lofty adds to embed wrapper divs */
-.md-custom-code { margin-bottom: 0 !important; }
-
-/* ============================================================
    NAV — desktop header (.md-header.layout3)
+   Can't live in an embed — targets Lofty's native header markup,
+   which exists outside any of our Embed Blocks entirely.
    ============================================================ */
 .md-header.layout3 .head-menu > .menu-item:not(.has-child):hover:before,
 .md-header.layout3 .head-menu > .menu-item:not(.has-child).active:before {
@@ -233,10 +24,9 @@ p {
 }
 /* Subtle drop shadow — only in the solid/scrolled state, not the
    transparent-over-hero state, so it doesn't read as a stray line
-   floating over photos before scroll. !important needed: Lofty's
-   own header rules likely set box-shadow too, and without it this
-   rule was silently losing that specificity fight (confirmed: the
-   CSS delivery pipeline is fine, this was a pure CSS-logic miss). */
+   floating over photos before scroll. !important required — Lofty's
+   own header rules also set box-shadow and were silently winning
+   the specificity fight without it. */
 .md-header.layout3:not(.transparent) {
   box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
 }
@@ -245,8 +35,26 @@ p {
 }
 
 /* ============================================================
+   .mg-container BREAKOUT — required for every full-bleed embed
+   section (position:relative; width:100vw; left:50%; etc. pattern).
+   Lofty wraps Embed Block content in .mg-container, which has
+   overflow:hidden and a constrained max-width by default. This
+   can't be inlined into the embed itself since .mg-container is
+   the PARENT Lofty generates around the embed, not part of it.
+   Add a new line here whenever a new full-bleed section is added.
+   ============================================================ */
+.mg-container:has(.media-section) { overflow: visible !important; max-width: 100% !important; }
+.mg-container:has(.stats-band) { overflow: visible !important; max-width: 100% !important; }
+.mg-container:has(.about) { overflow: visible !important; max-width: 100% !important; }
+
+/* Removes default bottom margin Lofty adds to embed wrapper divs.
+   Also can't be inlined — targets Lofty's own wrapper, not embed content. */
+.md-custom-code { margin-bottom: 0 !important; }
+
+/* ============================================================
    NATIVE LOFTY OVERRIDES — listings carousel, search drawer,
-   sell banner, cover title
+   sell banner, cover title. All target Lofty's own native blocks,
+   not our embeds — must stay external.
    ============================================================ */
 
 /* Listing carousel (md-house layout8) */
@@ -254,24 +62,24 @@ p {
 .md-house.layout8 .house-info .mls-box p,
 .md-house.layout8 .mls-box p { color: #fff !important; }
 .md-house.layout8 .house-next.iconfont,
-.md-house.layout8 .house-prev.iconfont { color: var(--color-gold) !important; }
+.md-house.layout8 .house-prev.iconfont { color: #e8b33d !important; }
 .md-house.layout8 .btn-wrap .view-all-listings-btn {
-  background: var(--color-gold) !important;
-  color: var(--color-offwhite) !important;
-  font-family: var(--font-sans) !important;
+  background: #e8b33d !important;
+  color: #f7f6f2 !important;
+  font-family: 'Jost', sans-serif !important;
   font-weight: 500 !important;
   border-radius: 10px !important;
   border: none !important;
-  transition: background-color var(--ease) !important;
+  transition: background-color 0.3s ease !important;
 }
 .md-house.layout8 .btn-wrap .view-all-listings-btn:hover {
-  background: var(--color-gold-hover) !important;
+  background: #E7AF36 !important;
 }
 
 /* Search results drawer — listing address headings */
 .search-result-drawer .house-grid-container .house-detail h3,
 .search-result-drawer .search-result-house-list .house-table-column.address h3 {
-  font-family: var(--font-sans) !important;
+  font-family: 'Jost', sans-serif !important;
   font-size: 1.2em !important;
   font-weight: 500 !important;
   letter-spacing: 0 !important;
@@ -279,7 +87,7 @@ p {
   max-width: none !important;
 }
 .search-result-drawer .search-result-header h1 {
-  font-size: var(--h3-size) !important;
+  font-size: clamp(1.5rem, 1.3rem + 0.8vw, 2.1rem) !important;
   font-weight: 500 !important;
   line-height: 1.16 !important;
   letter-spacing: 0 !important;
@@ -287,7 +95,7 @@ p {
   width: 100% !important;
 }
 .search-result-container.right .search-result-header h1 {
-  font-size: var(--h3-size) !important;
+  font-size: clamp(1.5rem, 1.3rem + 0.8vw, 2.1rem) !important;
   font-weight: 500 !important;
   line-height: 1.16 !important;
   letter-spacing: 0 !important;
@@ -323,170 +131,4 @@ p {
 }
 .md-cta.layout1 .banner-button-v2.count-1 a span {
   margin: 0 !important;
-}
-
-/* ============================================================
-   STATS BAND SECTION
-   ============================================================ */
-.stats-band {
-  position: relative;
-  width: 100vw;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  box-sizing: border-box;
-  background: linear-gradient(160deg, #1D4E6B 0%, #152233 100%);
-  padding: 64px;
-  display: flex;
-  justify-content: center;
-}
-.stats-band__inner {
-  width: 100%;
-  max-width: 1280px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-.stats-band__grid {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-.stats-band__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  padding: 0 32px;
-  text-align: center;
-}
-.stats-band__item + .stats-band__item {
-  border-left: 1px solid rgba(247,246,242,0.15);
-}
-.stats-band__item .eyebrow { justify-content: center; }
-.stats-band__item .eyebrow::before,
-.stats-band__item .eyebrow::after { display: none; } /* no flanking lines in this section */
-
-.stats-band__number {
-  font-size: clamp(2.75rem, 2rem + 3vw, 4.25rem) !important;
-  font-weight: 600 !important;
-  max-width: none !important;
-}
-.stats-band__caption {
-  text-align: center;
-  font-size: clamp(1rem, 0.95rem + 0.2vw, 1.125rem) !important;
-  max-width: none;
-  margin-top: 12px !important;
-  padding-top: 20px !important;
-  border-top: 1px solid rgba(247,246,242,0.12);
-  color: #c9c4b8 !important;
-}
-
-/* ============================================================
-   ABOUT/AGENT SECTION
-   ============================================================ */
-.about {
-  width: 100vw;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  position: relative;
-  box-sizing: border-box;
-  background: #f5f5f5;
-  padding: 120px 64px 0;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-}
-.about__inner {
-  width: 100%;
-  min-width: 0;
-  max-width: 1280px;
-  box-sizing: border-box;
-  display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  gap: 96px;
-  align-items: end;
-}
-.about__photo {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  min-width: 0;
-  border-radius: 16px 16px 0 0;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center;
-}
-.about__content {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  min-width: 0;
-  padding-bottom: 120px;
-}
-.about__intro {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.about__contact {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding-top: 28px;
-  border-top: 1px solid rgba(22,24,28,0.12);
-}
-.about__contact a,
-.about__contact p {
-  font-family: var(--font-sans) !important;
-  font-size: 0.9375rem !important;
-  color: var(--color-body) !important;
-  text-decoration: none;
-  margin: 0 !important;
-  max-width: none !important;
-}
-.about__contact a:hover { color: var(--color-ink) !important; }
-
-
-/* ============================================================
-   RESPONSIVE — tablet (≤1080px) and mobile (≤600px)
-   ============================================================ */
-@media (max-width: 1080px) {
-  .section { padding: 90px 40px; }
-  h1, h2, h3, h4, [aria-level] { line-height: 1.05 !important; letter-spacing: -0.005em !important; }
-  .eyebrow { letter-spacing: 0.2em !important; gap: 10px; }
-  .eyebrow::before, .eyebrow::after { width: 22px; }
-  .btn, .btn-item, button { font-size: 0.9rem !important; padding: 0.85em 1.6em !important; }
-  .media-section__content { padding: 14vh 40px; }
-  .stats-band { padding: 56px 32px; }
-  .about { padding: 90px 40px 0; }
-  .about__inner { grid-template-columns: 1fr; gap: 0; align-items: stretch; }
-  .about__content { order: 1; padding-bottom: 48px; }
-  .about__photo { order: 2; max-width: 420px; margin: 0 auto; }
-}
-
-@media (max-width: 600px) {
-  .section { padding: 64px 24px; }
-  h1, h2, h3, h4, [aria-level] { line-height: 1.1 !important; letter-spacing: 0 !important; }
-  .eyebrow { font-size: 10px !important; letter-spacing: 0.16em !important; gap: 8px; }
-  .eyebrow::before, .eyebrow::after { width: 16px; }
-  .btn, .btn-item, button { font-size: 0.85rem !important; padding: 0.8em 1.4em !important; }
-  .media-section__content { padding: 10vh 24px; }
-  .hero { min-height: 560px; }
-  .stats-band { padding: 48px 20px; }
-  .stats-band__grid { grid-template-columns: 1fr; gap: 32px; }
-  .stats-band__item + .stats-band__item {
-    border-left: none;
-    border-top: 1px solid rgba(247,246,242,0.15);
-    padding-top: 32px;
-  }
-  .about { padding: 64px 24px 0; }
-  .about__content { padding-bottom: 36px; }
-  .consult-hero .media-section__content {
-    padding: 10vh 24px;
-  }
 }
