@@ -592,6 +592,14 @@ p {
    Full-viewport-height like main hero — uses .hero directly,
    this class only overrides content width/gap.
    ============================================================ */
+/* ============================================================
+   CONSULTATION PAGE — HERO
+   Small banner hero, NOT a full-viewport hero like the homepage.
+   Overrides .hero's 100vh min-height explicitly.
+   ============================================================ */
+.consult-hero {
+  min-height: 50vh !important;
+}
 .consult-hero .media-section__content {
   max-width: 820px;
   gap: 20px;
@@ -811,5 +819,8 @@ p {
   .md-lead-form.standard .media-content.column {
     padding: 48px 24px;
     gap: 24px;
+  }
+  .consult-hero {
+    min-height: 30vh !important;
   }
 }
