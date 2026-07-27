@@ -449,6 +449,8 @@ p {
   display: flex;
   justify-content: center;
   text-align: center;
+  background-color: #f5f5f5;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cpath d='M0 60c15-20 45-20 60 0s45 20 60 0M0 0c15 20 45 20 60 0s45-20 60 0M0 120c15-20 45-20 60 0s45 20 60 0' stroke='%23000000' stroke-opacity='0.025' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
 }
 .consult-intro__inner {
   max-width: 560px;
@@ -479,11 +481,15 @@ p {
    untouched. Layout matches the reference screenshot (2-col grid,
    centered auto-width submit button); colors/type/spacing match
    the rest of the site's design system, not the reference image.
+   Background: #f5f5f5 with a subtle wave pattern (same SVG as
+   .consult-intro, for visual continuity between the two sections).
    ============================================================ */
 .contact-form-wrap {
   padding: 48px 32px 100px;
   display: flex;
   justify-content: center;
+  background-color: #f5f5f5;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cpath d='M0 60c15-20 45-20 60 0s45 20 60 0M0 0c15 20 45 20 60 0s45-20 60 0M0 120c15-20 45-20 60 0s45 20 60 0' stroke='%23000000' stroke-opacity='0.025' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
 }
 .contact-form-wrap .md-form-outer,
 .contact-form-wrap .md-form-container {
@@ -599,6 +605,10 @@ p {
   align-items: flex-start;
   gap: 10px;
 }
+.contact-form-wrap .checkbox-li {
+  pointer-events: auto;
+  cursor: pointer;
+}
 .contact-form-wrap .disclaimer-content p {
   font-family: var(--font-sans) !important;
   font-size: 0.8rem !important;
@@ -618,6 +628,22 @@ p {
   border: 1px solid rgba(22,24,28,0.25) !important;
   margin-top: 2px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--ease), border-color var(--ease);
+}
+/* Checked state — Lofty toggles the icon's inline display; style it
+   to actually be visible/readable once shown, and give the box
+   itself a filled background so the check reads clearly. */
+.contact-form-wrap .check-box-container .icon-checked {
+  color: var(--color-offwhite) !important;
+  font-size: 12px;
+}
+.contact-form-wrap .check-box-container:has(.icon-checked:not([style*="display:none"])),
+.contact-form-wrap .check-box-container:has(.icon-checked[style*="display: block"]) {
+  background: var(--color-gold) !important;
+  border-color: var(--color-gold) !important;
 }
 .contact-form-wrap .form-toast {
   border-radius: 12px;
@@ -671,10 +697,10 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+  gap: 0;
   padding: 64px 32px;
   width: 100%;
-  max-width: 620px;
+  max-width: 900px;
   margin: 0 auto;
 }
 .md-lead-form.standard .media-info {
@@ -684,6 +710,7 @@ p {
   text-align: center;
   gap: 12px;
   width: 100%;
+  margin-bottom: 32px;
 }
 .md-lead-form.standard .title-text {
   display: flex;
@@ -705,7 +732,7 @@ p {
   color: var(--color-ink) !important;
   line-height: 0.98 !important;
   letter-spacing: -0.01em !important;
-  max-width: 18ch !important;
+  max-width: none !important;
   text-align: center !important;
   margin: 0 auto !important;
 }
@@ -721,7 +748,7 @@ p {
   color: var(--color-body) !important;
   line-height: 1.6 !important;
   letter-spacing: normal !important;
-  max-width: 42ch !important;
+  max-width: 600px !important;
   text-align: center !important;
   margin: 0 auto !important;
 }
@@ -739,11 +766,7 @@ p {
   box-sizing: border-box;
 }
 .md-lead-form.standard .label-top {
-  font-family: var(--font-sans) !important;
-  font-size: 11px !important;
-  letter-spacing: 0.14em !important;
-  text-transform: uppercase;
-  color: #a8a094 !important;
+  display: none !important;
 }
 .md-lead-form.standard input[type="text"],
 .md-lead-form.standard input[type="email"],
@@ -884,7 +907,7 @@ p {
   .contact-form-wrap { padding: 64px 24px; }
   .md-lead-form.standard .media-content.column {
     padding: 48px 24px;
-    gap: 24px;
+    gap: 0;
   }
   .consult-hero .media-section__content {
     padding: 10vh 24px;
