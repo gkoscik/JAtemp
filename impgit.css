@@ -1,40 +1,336 @@
+/* ============================================================
+   FONTS + VARIABLES
+   ============================================================ */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
-:root{--fs:'Cormorant Garamond',serif;--fb:'Jost',sans-serif;--ink:#16181c;--body:#454a52;--gold:#e8b33d;--goldh:#E7AF36;--lt:#f7f6f2;--ease:.3s ease;--h2s:clamp(2.1rem,1.7rem + 1.6vw,3.25rem);--h3s:clamp(1.5rem,1.3rem + 0.8vw,2.1rem)}
-h1,h2,h3,h4,p,[aria-level]{margin:0!important;padding:0!important}
-h1,h2,h3,h4,[aria-level]{font-family:var(--fs)!important;line-height:.98!important;letter-spacing:-.01em!important;max-width:20ch!important;color:var(--ink)!important;font-weight:400!important}
-h1,[aria-level="1"]{font-size:clamp(2.75rem,2.1rem + 2.6vw,5rem)!important}
-h2,[aria-level="2"]{font-size:var(--h2s)!important}
-h3,[aria-level="3"]{font-size:var(--h3s)!important}
-h4,[aria-level="4"]{font-size:clamp(1.2rem,1.1rem + 0.4vw,1.5rem)!important}
-p{font-family:var(--fb)!important;font-weight:400;font-size:clamp(1rem,0.95rem + 0.2vw,1.125rem)!important;line-height:1.7!important;max-width:62ch!important;color:var(--body)!important}
-.eb{font-family:var(--fb)!important;font-weight:500;font-size:11px!important;letter-spacing:.28em!important;text-transform:uppercase;color:#a8a094!important;display:flex;align-items:center;gap:14px}
-.eb::before,.eb::after{content:"";height:1px;width:32px;background:currentColor;opacity:.5}
-.em{font-style:italic;font-weight:500;color:inherit}
-.tl,.tl h1,.tl h2,.tl h3,.tl h4,.tl p,.tl .eb{color:var(--lt)!important;text-shadow:0 2px 20px rgba(0,0,0,.4)}
-.td,.td h1,.td h2,.td h3,.td h4,.td p,.td .eb{color:var(--ink)!important;text-shadow:none!important}
-.b,.btn-item,button{font-family:var(--fb)!important;font-weight:500!important;font-size:1rem!important;letter-spacing:.01em!important;line-height:1!important;border-radius:10px!important;padding:.95em 1.9em!important;border:none!important;cursor:pointer!important;transition:background-color .25s ease,border-color .25s ease!important}
-.bp,.btn-item{background:var(--gold)!important;color:var(--lt)!important}
-.bp:hover,.btn-item:hover{background:var(--goldh)!important}
-.bs{background:rgba(255,255,255,.16)!important;backdrop-filter:blur(12px)!important;-webkit-backdrop-filter:blur(12px)!important;border:1px solid rgba(255,255,255,.35)!important;color:var(--lt)!important}
-.bs:hover{background:rgba(255,255,255,.24)!important;border-color:rgba(255,255,255,.5)!important}
-.ar{display:flex;gap:16px;margin-top:12px;flex-wrap:wrap;justify-content:center}
-.sc{padding:120px 32px}
-.md-header.layout3 .head-menu>.menu-item:not(.has-child):hover:before,.md-header.layout3 .head-menu>.menu-item:not(.has-child).active:before{display:none!important}
-.md-header.layout3 .wrapper .submenu.hidden-scrollbar>.menu-item:hover{background:#E4EDF2!important}
-.md-header.layout3 .wrapper .submenu.hidden-scrollbar>.menu-item:hover>a{color:#1D4E6B!important}
-.md-header.layout3 .head-menu>.menu-item.has-child>.wrapper{border-radius:4px!important;overflow:hidden;opacity:0;transition:opacity .4s ease}
-.md-header.layout3 .head-menu>.menu-item.has-child:hover>.wrapper{opacity:1}
-.md-house.layout8 .house-info .addressAndprice .address-wrap p{color:#fff!important}
-.md-house.layout8 .house-info .mls-box p,.md-house.layout8 .mls-box p{color:#fff!important}
-.md-house.layout8 .house-next.iconfont,.md-house.layout8 .house-prev.iconfont{color:var(--gold)!important}
-.search-result-drawer .house-grid-container .house-detail h3,.search-result-drawer .search-result-house-list .house-table-column.address h3{font-family:var(--fb)!important;font-size:1.2em!important;font-weight:500!important;letter-spacing:0!important;line-height:1.3!important;max-width:none!important}
-.search-result-drawer .search-result-header h1{font-size:var(--h3s)!important;font-weight:500!important;line-height:1.16!important;letter-spacing:0!important;max-width:none!important;width:100%!important}
-.md-sell-banner.layout1 .media-content-v2 .media-info h3,.md-sell-banner.layout1 .media-content-v2 .media-info h2{color:#fff!important;text-align:center!important}
-.cover .site-title,.cover .site-subtitle{width:100%!important;display:flex!important;justify-content:center!important}
-.cover .site-title h2,.cover .site-subtitle p{color:#fff!important;text-align:center!important;width:auto!important;max-width:20ch!important}
-.md-house.layout8 .btn-wrap .view-all-listings-btn{background:var(--gold)!important;color:var(--lt)!important;font-family:var(--fb)!important;font-weight:500!important;border-radius:10px!important;border:none!important;transition:background-color var(--ease)!important}
-.md-house.layout8 .btn-wrap .view-all-listings-btn:hover{background:var(--goldh)!important}
-.md-cta.layout1 .banner-button-v2.count-1 a{display:flex!important;align-items:center!important;justify-content:center!important}
-.md-cta.layout1 .banner-button-v2.count-1 a span{margin:0!important}
-@media(max-width:1080px){.sc{padding:90px 40px}h1,h2,h3,h4,[aria-level]{line-height:1.05!important;letter-spacing:-.005em!important}.eb{letter-spacing:.2em!important;gap:10px}.eb::before,.eb::after{width:22px}.b,.btn-item,button{font-size:.9rem!important;padding:.85em 1.6em!important}}
-@media(max-width:600px){.sc{padding:64px 24px}h1,h2,h3,h4,[aria-level]{line-height:1.1!important;letter-spacing:0!important}.eb{font-size:10px!important;letter-spacing:.16em!important;gap:8px}.eb::before,.eb::after{width:16px}.b,.btn-item,button{font-size:.85rem!important;padding:.8em 1.4em!important}}
+
+:root {
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Jost', sans-serif;
+  --color-ink: #16181c;
+  --color-body: #454a52;
+  --color-gold: #e8b33d;
+  --color-gold-hover: #E7AF36;
+  --color-offwhite: #f7f6f2;
+  --ease: 0.3s ease;
+  --h2-size: clamp(2.1rem, 1.7rem + 1.6vw, 3.25rem);
+  --h3-size: clamp(1.5rem, 1.3rem + 0.8vw, 2.1rem);
+}
+
+/* ============================================================
+   TYPOGRAPHY — base heading/paragraph system
+   Also targets [aria-level] since Lofty fakes headings with
+   divs like <div role="heading" aria-level="1"> in some blocks
+   ============================================================ */
+h1, h2, h3, h4, p, [aria-level] {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+h1, h2, h3, h4, [aria-level] {
+  font-family: var(--font-serif) !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.01em !important;
+  max-width: 20ch !important;
+  color: var(--color-ink) !important;
+  font-weight: 400 !important;
+}
+
+h1, [aria-level="1"] { font-size: clamp(2.75rem, 2.1rem + 2.6vw, 5rem) !important; }
+h2, [aria-level="2"] { font-size: var(--h2-size) !important; }
+h3, [aria-level="3"] { font-size: var(--h3-size) !important; }
+h4, [aria-level="4"] { font-size: clamp(1.2rem, 1.1rem + 0.4vw, 1.5rem) !important; }
+
+p {
+  font-family: var(--font-sans) !important;
+  font-weight: 400;
+  font-size: clamp(1rem, 0.95rem + 0.2vw, 1.125rem) !important;
+  line-height: 1.7 !important;
+  max-width: 62ch !important;
+  color: var(--color-body) !important;
+}
+
+/* ============================================================
+   EYEBROW — small tracked-out label above headings
+   ============================================================ */
+.eyebrow {
+  font-family: var(--font-sans) !important;
+  font-weight: 500;
+  font-size: 11px !important;
+  letter-spacing: 0.28em !important;
+  text-transform: uppercase;
+  color: #a8a094 !important;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.eyebrow::before,
+.eyebrow::after {
+  content: "";
+  height: 1px;
+  width: 32px;
+  background: currentColor;
+  opacity: 0.5;
+}
+
+/* ============================================================
+   TEXT UTILITIES
+   ============================================================ */
+.text-emphasis {
+  font-style: italic;
+  font-weight: 500;
+  color: inherit;
+}
+
+/* Light text override — use on any section with a dark/photo background */
+.text-light,
+.text-light h1, .text-light h2, .text-light h3, .text-light h4,
+.text-light p, .text-light .eyebrow {
+  color: var(--color-offwhite) !important;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+}
+
+/* Dark text override — explicit, for light-colored (non-white) backgrounds */
+.text-dark,
+.text-dark h1, .text-dark h2, .text-dark h3, .text-dark h4,
+.text-dark p, .text-dark .eyebrow {
+  color: var(--color-ink) !important;
+  text-shadow: none !important;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn, .btn-item, button {
+  font-family: var(--font-sans) !important;
+  font-weight: 500 !important;
+  font-size: 1rem !important;
+  letter-spacing: 0.01em !important;
+  line-height: 1 !important;
+  border-radius: 10px !important;
+  padding: 0.95em 1.9em !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: background-color 0.25s ease, border-color 0.25s ease !important;
+}
+
+.btn-primary, .btn-item {
+  background: var(--color-gold) !important;
+  color: var(--color-offwhite) !important;
+}
+.btn-primary:hover, .btn-item:hover {
+  background: var(--color-gold-hover) !important;
+}
+
+.btn-secondary {
+  background: rgba(255,255,255,0.16) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255,255,255,0.35) !important;
+  color: var(--color-offwhite) !important;
+}
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.24) !important;
+  border-color: rgba(255,255,255,0.5) !important;
+}
+
+.actions-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ============================================================
+   LAYOUT — generic section padding + full-bleed media pattern
+   ============================================================ */
+.section {
+  padding: 120px 32px;
+}
+
+/* Full-bleed photo/video section wrapper — breaks out of Lofty's
+   .mg-container width constraint. Pair with .mg-container:has()
+   override below, scoped per-section as needed. */
+.media-section {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.media-section__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+  z-index: 0;
+}
+.scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(60% 55% at 50% 52%, rgba(21,34,51,0.42) 0%, rgba(21,34,51,0.32) 45%, rgba(21,34,51,0.2) 70%, rgba(21,34,51,0.25) 100%),
+    linear-gradient(0deg, rgba(21,34,51,0.35) 0%, rgba(21,34,51,0.08) 55%, rgba(21,34,51,0.18) 100%);
+}
+.media-section__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 18vh 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 26px;
+}
+
+/* Hero-specific height marker */
+.hero {
+  min-height: 100vh;
+}
+
+/* Lofty wraps embeds in .mg-container (overflow:hidden, max-width capped).
+   These :has() rules let full-bleed sections escape it. Scoped per-block
+   below where needed — add a new line here if a future section also
+   needs to break out. */
+.mg-container:has(.media-section) { overflow: visible !important; max-width: 100% !important; }
+.mg-container:has(.stats-band) { overflow: visible !important; max-width: 100% !important; }
+.mg-container:has(.about) { overflow: visible !important; max-width: 100% !important; }
+
+/* Removes default bottom margin Lofty adds to embed wrapper divs */
+.md-custom-code { margin-bottom: 0 !important; }
+
+/* ============================================================
+   NAV — desktop header (.md-header.layout3)
+   ============================================================ */
+.md-header.layout3 .head-menu > .menu-item:not(.has-child):hover:before,
+.md-header.layout3 .head-menu > .menu-item:not(.has-child).active:before {
+  display: none !important; /* remove thick default underline on non-dropdown items */
+}
+.md-header.layout3 .wrapper .submenu.hidden-scrollbar > .menu-item:hover {
+  background: #E4EDF2 !important;
+}
+.md-header.layout3 .wrapper .submenu.hidden-scrollbar > .menu-item:hover > a {
+  color: #1D4E6B !important;
+}
+.md-header.layout3 .head-menu > .menu-item.has-child > .wrapper {
+  border-radius: 4px !important;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease; /* fade in/out instead of instant snap */
+}
+.md-header.layout3 .head-menu > .menu-item.has-child:hover > .wrapper {
+  opacity: 1;
+}
+
+/* ============================================================
+   NATIVE LOFTY OVERRIDES — listings carousel, search drawer,
+   sell banner, cover title
+   ============================================================ */
+
+/* Listing carousel (md-house layout8) */
+.md-house.layout8 .house-info .addressAndprice .address-wrap p { color: #fff !important; }
+.md-house.layout8 .house-info .mls-box p,
+.md-house.layout8 .mls-box p { color: #fff !important; }
+.md-house.layout8 .house-next.iconfont,
+.md-house.layout8 .house-prev.iconfont { color: var(--color-gold) !important; }
+.md-house.layout8 .btn-wrap .view-all-listings-btn {
+  background: var(--color-gold) !important;
+  color: var(--color-offwhite) !important;
+  font-family: var(--font-sans) !important;
+  font-weight: 500 !important;
+  border-radius: 10px !important;
+  border: none !important;
+  transition: background-color var(--ease) !important;
+}
+.md-house.layout8 .btn-wrap .view-all-listings-btn:hover {
+  background: var(--color-gold-hover) !important;
+}
+
+/* Search results drawer — listing address headings */
+.search-result-drawer .house-grid-container .house-detail h3,
+.search-result-drawer .search-result-house-list .house-table-column.address h3 {
+  font-family: var(--font-sans) !important;
+  font-size: 1.2em !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.3 !important;
+  max-width: none !important;
+}
+.search-result-drawer .search-result-header h1 {
+  font-size: var(--h3-size) !important;
+  font-weight: 500 !important;
+  line-height: 1.16 !important;
+  letter-spacing: 0 !important;
+  max-width: none !important;
+  width: 100% !important;
+}
+.search-result-container.right .search-result-header h1 {
+  font-size: var(--h3-size) !important;
+  font-weight: 500 !important;
+  line-height: 1.16 !important;
+  letter-spacing: 0 !important;
+  max-width: none !important;
+  width: 100% !important;
+}
+
+/* Sell banner + generic cover title/subtitle — white, centered */
+.md-sell-banner.layout1 .media-content-v2 .media-info h3,
+.md-sell-banner.layout1 .media-content-v2 .media-info h2 {
+  color: #fff !important;
+  text-align: center !important;
+}
+.cover .site-title,
+.cover .site-subtitle {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+.cover .site-title h2,
+.cover .site-subtitle p {
+  color: #fff !important;
+  text-align: center !important;
+  width: auto !important;
+  max-width: 20ch !important;
+}
+
+/* CTA banner button — center label inside button */
+.md-cta.layout1 .banner-button-v2.count-1 a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.md-cta.layout1 .banner-button-v2.count-1 a span {
+  margin: 0 !important;
+}
+
+/* ============================================================
+   RESPONSIVE — tablet (≤1080px) and mobile (≤600px)
+   ============================================================ */
+@media (max-width: 1080px) {
+  .section { padding: 90px 40px; }
+  h1, h2, h3, h4, [aria-level] { line-height: 1.05 !important; letter-spacing: -0.005em !important; }
+  .eyebrow { letter-spacing: 0.2em !important; gap: 10px; }
+  .eyebrow::before, .eyebrow::after { width: 22px; }
+  .btn, .btn-item, button { font-size: 0.9rem !important; padding: 0.85em 1.6em !important; }
+  .media-section__content { padding: 14vh 40px; }
+}
+
+@media (max-width: 600px) {
+  .section { padding: 64px 24px; }
+  h1, h2, h3, h4, [aria-level] { line-height: 1.1 !important; letter-spacing: 0 !important; }
+  .eyebrow { font-size: 10px !important; letter-spacing: 0.16em !important; gap: 8px; }
+  .eyebrow::before, .eyebrow::after { width: 16px; }
+  .btn, .btn-item, button { font-size: 0.85rem !important; padding: 0.8em 1.4em !important; }
+  .media-section__content { padding: 10vh 24px; }
+  .hero { min-height: 560px; }
+}
