@@ -4,10 +4,21 @@
    !important required — Lofty's own header rules also set
    box-shadow and silently won without it.
    ============================================================ */
-.md-header.layout3:not(.transparent) {
+/* ============================================================
+   NAV DROP SHADOW — ISOLATED TEST, see note above before touching.
+   Only in the solid/scrolled state, not transparent-over-hero.
+   CONFIRMED via live DOM inspection: .transparent is toggled on
+   the inner <div role="navigation">, NOT on <header class="md-header
+   layout3"> itself — the original selector targeted the wrong
+   element entirely, which is why the shadow never rendered at all
+   (not intermittent — a plain, confirmed selector miss).
+   !important required — Lofty's own header rules also set
+   box-shadow and silently won without it.
+   ============================================================ */
+.md-header.layout3 [role="navigation"]:not(.transparent) {
   box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
 }
-.md-header.layout3.transparent {
+.md-header.layout3 [role="navigation"].transparent {
   box-shadow: none !important;
 }
 
