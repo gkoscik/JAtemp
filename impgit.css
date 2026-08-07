@@ -1,4 +1,17 @@
 /* ============================================================
+   NAV DROP SHADOW — ISOLATED TEST, see note above before touching.
+   Only in the solid/scrolled state, not transparent-over-hero.
+   !important required — Lofty's own header rules also set
+   box-shadow and silently won without it.
+   ============================================================ */
+.md-header.layout3:not(.transparent) {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
+}
+.md-header.layout3.transparent {
+  box-shadow: none !important;
+}
+
+/* ============================================================
    .mg-container BREAKOUT — required for every full-bleed embed
    section (position:relative; width:100vw; left:50%; etc. pattern).
    Lofty wraps Embed Block content in .mg-container, which has
