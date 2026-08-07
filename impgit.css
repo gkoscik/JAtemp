@@ -1,40 +1,4 @@
 /* ============================================================
-   NAV — desktop header (.md-header.layout3)
-   Can't live in an embed — targets Lofty's native header markup,
-   which exists outside any of our Embed Blocks entirely.
-   ============================================================ */
-.md-header.layout3 .head-menu > .menu-item:not(.has-child):hover:before,
-.md-header.layout3 .head-menu > .menu-item:not(.has-child).active:before {
-  display: none !important; /* remove thick default underline on non-dropdown items */
-}
-.md-header.layout3 .wrapper .submenu.hidden-scrollbar > .menu-item:hover {
-  background: #E4EDF2 !important;
-}
-.md-header.layout3 .wrapper .submenu.hidden-scrollbar > .menu-item:hover > a {
-  color: #1D4E6B !important;
-}
-.md-header.layout3 .head-menu > .menu-item.has-child > .wrapper {
-  border-radius: 4px !important;
-  overflow: hidden;
-  opacity: 0;
-  transition: opacity 0.4s ease; /* fade in/out instead of instant snap */
-}
-.md-header.layout3 .head-menu > .menu-item.has-child:hover > .wrapper {
-  opacity: 1;
-}
-/* Subtle drop shadow — only in the solid/scrolled state, not the
-   transparent-over-hero state, so it doesn't read as a stray line
-   floating over photos before scroll. !important required — Lofty's
-   own header rules also set box-shadow and were silently winning
-   the specificity fight without it. */
-.md-header.layout3:not(.transparent) {
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
-}
-.md-header.layout3.transparent {
-  box-shadow: none !important;
-}
-
-/* ============================================================
    .mg-container BREAKOUT — required for every full-bleed embed
    section (position:relative; width:100vw; left:50%; etc. pattern).
    Lofty wraps Embed Block content in .mg-container, which has
@@ -137,4 +101,33 @@
 }
 .md-cta.layout1 .banner-button-v2.count-1 a span {
   margin: 0 !important;
+}
+
+/* Evaluation banner (md-evaluation-banner layout1) — native block,
+   CSS-only, no markup control. Styled to match the hero-1 h1/p
+   treatment exactly (same font, size, color, shadow) for visual
+   consistency with the rest of the site. !important on every
+   property per the specificity lesson learned tonight — Lofty's
+   own banner CSS will otherwise win silently on any property left
+   unguarded. Selector paths confirmed via live DOM inspection. */
+#app > div.md-evaluation-banner.layout1 > div > div.cover.f-col > div.site-title > h1 > span {
+  font-family: 'Cormorant Garamond', serif !important;
+  margin: 0 !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.01em !important;
+  color: #f7f6f2 !important;
+  font-weight: 400 !important;
+  font-size: clamp(2.75rem, 2.1rem + 2.6vw, 5rem) !important;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.4) !important;
+}
+#app > div.md-evaluation-banner.layout1 > div > div.cover.f-col > div.site-subtitle > h4 > span {
+  font-family: 'Jost', sans-serif !important;
+  margin: 0 !important;
+  font-weight: 400 !important;
+  font-size: clamp(1rem, 0.95rem + 0.2vw, 1.125rem) !important;
+  line-height: 1.7 !important;
+  letter-spacing: normal !important;
+  color: #f7f6f2 !important;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.4) !important;
+  text-transform: none !important;
 }
