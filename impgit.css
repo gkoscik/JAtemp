@@ -22,6 +22,11 @@
 .md-header.layout3 .head-menu > .menu-item.has-child:hover > .wrapper {
   opacity: 1;
 }
+/* Subtle drop shadow — only in the solid/scrolled state, not the
+   transparent-over-hero state, so it doesn't read as a stray line
+   floating over photos before scroll. !important required — Lofty's
+   own header rules also set box-shadow and were silently winning
+   the specificity fight without it. */
 .md-header.layout3:not(.transparent) {
   box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
 }
@@ -29,8 +34,34 @@
   box-shadow: none !important;
 }
 
-/* Removes default bottom margin Lofty adds to embed wrapper divs. */
+/* ============================================================
+   .mg-container BREAKOUT — required for every full-bleed embed
+   section (position:relative; width:100vw; left:50%; etc. pattern).
+   Lofty wraps Embed Block content in .mg-container, which has
+   overflow:hidden and a constrained max-width by default. This
+   can't be inlined into the embed itself since .mg-container is
+   the PARENT Lofty generates around the embed, not part of it.
+   Add a new line here whenever a new full-bleed section is added.
+
+   UPDATE: as of the FOUC investigation, these rules are now
+   duplicated INLINE in each full-bleed embed's own <style> tag
+   instead of living only here — see "Going forward" at the end of
+   this doc. Nothing currently needs an external-only breakout rule
+   (every full-bleed section we have is an embed with its own inline
+   copy), so this block is intentionally empty for now. If a future
+   full-bleed element exists OUTSIDE any embed (unlikely, but
+   possible), its breakout rule would go here instead.
+   ============================================================ */
+
+/* Removes default bottom margin Lofty adds to embed wrapper divs.
+   Also can't be inlined — targets Lofty's own wrapper, not embed content. */
 .md-custom-code { margin-bottom: 0 !important; }
+
+/* ============================================================
+   NATIVE LOFTY OVERRIDES — listings carousel, search drawer,
+   sell banner, cover title. All target Lofty's own native blocks,
+   not our embeds — must stay external.
+   ============================================================ */
 
 /* Listing carousel (md-house layout8) */
 .md-house.layout8 .house-info .addressAndprice .address-wrap p { color: #fff !important; }
