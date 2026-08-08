@@ -178,11 +178,50 @@
   padding-bottom: 50px !important;
 }
 
+/* Search results drawer — grid variant. Different drawer state
+   (.mixed.left.compose vs. .normal) with a different inner grid
+   element (.house-grid-container.f-col vs. .search-result-house-
+   list) — same padding-bottom goal, separate rule since the class
+   combination and target element both differ from the rule above. */
+.search-result-drawer.mg-scrollbar.left.compose .drawer-body .search-result.mg-scrollbar .house-grid-container.f-col {
+  padding-bottom: 50px !important;
+}
+
 /* Featured listings section title area (md-house layout14) —
    background matches .stats-band-2's gradient exactly, for visual
    consistency between the two sections. */
 .md-house.layout14.mg-bg .left.title-item {
   background: linear-gradient(160deg, #1D4E6B 0%, #152233 100%) !important;
+}
+/* Decorative line under the title — hidden per request, along with
+   its margin (display:none removes it from layout entirely,
+   margin explicitly zeroed as a defensive measure in case any
+   sibling relied on margin-collapse with it). */
+.md-house.layout14.mg-bg .left.title-item .title-line {
+  display: none !important;
+  margin: 0 !important;
+}
+/* Title — styled to match .about-3 h2 exactly, but white (this
+   section has the dark gradient background above, not light). */
+.md-house.layout14.mg-bg .left.title-item .house-title .site-title.left p span {
+  font-family: 'Cormorant Garamond', serif !important;
+  margin: 0 !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.01em !important;
+  max-width: 20ch !important;
+  color: #f7f6f2 !important;
+  font-weight: 400 !important;
+  font-size: clamp(2.1rem, 1.7rem + 1.6vw, 3.25rem) !important;
+}
+/* Subtitle — styled to match .about-3 p exactly, but white. */
+.md-house.layout14.mg-bg .left.title-item .house-title .site-subtitle.left.desc h4 {
+  font-family: 'Jost', sans-serif !important;
+  margin: 0 !important;
+  font-weight: 400 !important;
+  font-size: clamp(1rem, 0.95rem + 0.2vw, 1.125rem) !important;
+  line-height: 1.7 !important;
+  max-width: 62ch !important;
+  color: #f7f6f2 !important;
 }
 
 /* Evaluation banner (md-evaluation-banner layout1) — native block,
