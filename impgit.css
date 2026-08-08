@@ -330,9 +330,10 @@
     padding-bottom: 0 !important;
   }
   .md-house.layout14.mg-bg .left.title-item {
-    padding: 32px 24px 20px 24px !important;
     align-items: center !important;
     text-align: center !important;
+    background: none !important;
+    padding: 0 24px !important;
   }
   .md-house.layout14.mg-bg .left.title-item .house-title {
     align-items: center !important;
@@ -378,39 +379,44 @@
      BEFORE the swiper (order: 3) — per request, the button should
      stay grouped with the header/subheader at the top, not trail
      after the listing photos.
-     FIX (per request): removed the 24px top / 32px bottom margin —
-     button now sits directly against the title block above it, no
-     gap, since Lofty's own native margin (index.vue:100, margin:
-     20px auto 0 auto) is still overridden to 0 on all sides so
-     nothing sneaks back in. Small bottom padding kept on the
-     .house-container itself (see below) rather than on the button,
-     so there's still a touch of breathing room before the swiper
-     without pushing the button away from the header. */
+     Margin: 0 on top/left/right, 40px bottom only (per request) —
+     gives clean separation from the swiper below without pushing the
+     button away from the title block above it. Lofty's own native
+     margin (index.vue:100, margin: 20px auto 0 auto) is still
+     overridden here so nothing sneaks back in on any side we didn't
+     explicitly set. */
   .md-house.layout14.mg-bg .house-container .btn-wrap {
     order: 2 !important;
     align-self: center !important;
-    margin: 0 !important;
+    margin: 0 0 40px 0 !important;
     width: auto !important;
   }
   .md-house.layout14.mg-bg .house-container .layout14-house-swiper {
     order: 3 !important;
   }
-  /* FIX: .house-container has more than the 3 children we can see/
-     target directly — the property slider itself is Vue-injected
-     markup not visible in a static DOM screenshot (confirmed per
-     request), and most of the gradient area we set is actually
-     sitting BEHIND that slider once it renders, not visible as the
-     open blue band shown in the reference screenshot. Since we can't
-     target the slider's own wrapper directly to inset it, bottom
-     padding is added to .house-container itself instead — this
-     keeps a visible strip of gradient between the button and wherever
-     the slider actually starts rendering, as a buffer, rather than
-     assuming the button's own spacing alone accounts for it. Revisit
-     with live DevTools on the actual slider wrapper class if this
-     buffer needs tuning — flagged as an estimate, not a confirmed
-     pixel value, since the slider's real markup isn't visible to us. */
-  .md-house.layout14.mg-bg .house-container {
-    padding-bottom: 24px !important;
+  /* Bottom spacing before the swiper is now handled by .btn-wrap's
+     own 40px bottom margin above (per request) — no separate buffer
+     needed here, avoids doubling up the gap. */
+}
+
+/* Second mobile tier — split out from the 800px block above per the
+   hero's own established two-tier pattern (see .hero-1 .btn, which
+   has separate @media (max-width: 1080px) and @media (max-width:
+   600px) rules, not one combined breakpoint). The 800px block above
+   handles STRUCTURAL layout changes only (flex-direction, ordering,
+   centering) — genuinely a tablet-and-below concern. Button
+   typography is a separate, PHONE-specific concern and belongs at
+   600px like the hero's own button does, not glued onto the 800px
+   structural breakpoint. Splitting these out means a future edit
+   to either concern has an obvious, unambiguous home instead of
+   guessing which numbers belong at which width — this is the fix
+   for the exact confusion that caused the button-padding mismatch
+   bug (see chat history). */
+@media (max-width: 600px) {
+  .md-house.layout14.mg-bg .btn-wrap .more-btn,
+  .md-house.layout14.mg-bg .btn-wrap .site-button {
+    font-size: 0.85rem !important;
+    padding: 0.8em 1.4em !important;
   }
 }
 
