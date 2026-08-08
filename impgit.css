@@ -210,16 +210,19 @@
    section has the dark gradient background above, not light).
    line-height set on BOTH .site-title.left (overrides Lofty's own
    var(--mg-title-line-height) at its source, confirmed via
-   DevTools) AND the inner span (belt-and-suspenders) — tightened
-   to 0.9 since 0.98 still left visible gap between wrapped lines
-   at this large font-size. */
+   DevTools) AND the inner span (belt-and-suspenders).
+   CORRECTED: 0.9 was too tight and clipped descenders (the "g" in
+   "Listings") — line-height that low doesn't leave enough room
+   below the baseline for letters like g/y/p. 1.1 is a safer middle
+   ground: still tighter than Lofty's default (which caused visible
+   gap when text wrapped to two lines), but leaves descender room. */
 .md-house.layout14.mg-bg .left.title-item .house-title .site-title.left {
-  line-height: 0.9 !important;
+  line-height: 1.1 !important;
 }
 .md-house.layout14.mg-bg .left.title-item .house-title .site-title.left p span {
   font-family: 'Cormorant Garamond', serif !important;
   margin: 0 !important;
-  line-height: 0.9 !important;
+  line-height: 1.1 !important;
   letter-spacing: -0.01em !important;
   max-width: 20ch !important;
   color: #f7f6f2 !important;
@@ -235,6 +238,35 @@
   line-height: 1.7 !important;
   max-width: 62ch !important;
   color: #f7f6f2 !important;
+}
+
+/* Featured listings title area — center header/subheader/line and
+   add breathing-room padding on tablet and below (≤800px), per
+   request. Overrides text-align (was "left" per the inline
+   style="text-align:var(--mg-title-align)" pattern seen elsewhere
+   in this block — targeting the .site-title/.site-subtitle wrapper
+   classes directly since text-align on those may also be inline;
+   if this doesn't visually take effect, the align is likely inline
+   too and will need the same treatment as the font-size finding.) */
+@media (max-width: 800px) {
+  .md-house.layout14.mg-bg .left.title-item {
+    padding: 32px 24px !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .md-house.layout14.mg-bg .left.title-item .house-title {
+    align-items: center !important;
+  }
+  .md-house.layout14.mg-bg .left.title-item .house-title .site-title.left,
+  .md-house.layout14.mg-bg .left.title-item .house-title .site-title.left p,
+  .md-house.layout14.mg-bg .left.title-item .house-title .site-subtitle.left.desc,
+  .md-house.layout14.mg-bg .left.title-item .house-title .site-subtitle.left.desc h4 {
+    text-align: center !important;
+  }
+  .md-house.layout14.mg-bg .left.title-item .title-line {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 }
 
 /* Evaluation banner (md-evaluation-banner layout1) — native block,
