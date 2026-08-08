@@ -322,3 +322,11 @@
   text-shadow: 0 2px 20px rgba(0,0,0,0.4) !important;
   text-transform: none !important;
 }
+/* Site-title container — capped width, centered. margin: 0 auto
+   would wipe out the existing bottom spacing, so margin-bottom is
+   explicitly re-set to preserve the 20px gap that was there before. */
+#app > div.md-evaluation-banner.layout1 > div > div.cover.f-col > div.site-title {
+  max-width: 600px !important;
+  margin: 0 auto !important;
+  margin-bottom: 20px !important;
+}
