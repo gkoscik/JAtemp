@@ -210,30 +210,34 @@
 /* Featured listings section title area (md-house layout14) —
    background matches .stats-band-2's gradient exactly, for visual
    consistency between the two sections.
-   FIX: gradient applied redundantly to three nested elements —
-   .md-house.layout14.mg-bg (outer parent), .house-container (the
-   flex box directly holding all 3 children: title block, button,
-   swiper), and .left.title-item — so the gradient is guaranteed to
-   cover the entire blue area behind all 3 children with no gap,
-   regardless of which specific element's own padding/margin was
-   otherwise exposing the page's base background color. Confirmed
-   via DevTools that .md-house.layout14.mg-bg carries its own
-   padding-top: 40px (Lofty's inline style, --g-bg-color) which sits
-   OUTSIDE .left.title-item's background box alone — that's the
-   original visible-gap bug. Layering the same gradient on all three
-   containers (rather than trying to pin down the exact one
-   responsible) is deliberate belt-and-suspenders here since the
-   swiper itself is opaque (real listing photos) and will correctly
-   cover the gradient where it sits — this only affects the area
-   above/around the swiper, not behind it. */
+   FIX: gradient lives on .md-house.layout14.mg-bg (outer parent)
+   and .house-container only now — the .left.title-item copy was
+   removed per request (was a redundant "stacked gradient," visible
+   as a subtle seam where the two gradient boxes' edges didn't
+   perfectly align since they're different-sized boxes rendering the
+   same 160deg gradient independently rather than one continuous
+   one). Confirmed via DevTools that .md-house.layout14.mg-bg
+   carries its own padding-top: 40px (Lofty's inline style,
+   --g-bg-color) which sits OUTSIDE .left.title-item's own box —
+   that's the original visible-gap bug this was solving. Two layers
+   (parent + house-container) is enough to cover that without the
+   third, misaligned layer. */
+   FIX: gradient stops tightened from the original 0%/100% (matching
+   .stats-band-2's shorter section) to 0%/35% here specifically —
+   this section is much taller than .stats-band-2 due to the image
+   slider beneath it, so spreading the same two color stops across
+   the FULL section height meant the visible color shift was nearly
+   imperceptible in the top portion (all anyone actually sees, since
+   the slider's opaque photos cover the rest). Ending the transition
+   at 35% instead of 100% completes the #1D4E6B → #152233 shift
+   within roughly the top third of the section — the visible area —
+   then holds flat #152233 for the remainder, which is functionally
+   invisible anyway since the slider sits on top of it. */
 .md-house.layout14.mg-bg {
-  background: linear-gradient(160deg, #1D4E6B 0%, #152233 100%) !important;
+  background: linear-gradient(160deg, #1D4E6B 0%, #152233 35%, #152233 100%) !important;
 }
 .md-house.layout14.mg-bg .house-container {
-  background: linear-gradient(160deg, #1D4E6B 0%, #152233 100%) !important;
-}
-.md-house.layout14.mg-bg .left.title-item {
-  background: linear-gradient(160deg, #1D4E6B 0%, #152233 100%) !important;
+  background: linear-gradient(160deg, #1D4E6B 0%, #152233 35%, #152233 100%) !important;
 }
 /* "More Listings" button (.btn-wrap > a) — styled to match
    .btn-primary from Section 1 (Hero) exactly: burgundy fill, Jost
@@ -326,7 +330,7 @@
     padding-bottom: 0 !important;
   }
   .md-house.layout14.mg-bg .left.title-item {
-    padding: 32px 24px 0 24px !important;
+    padding: 32px 24px 20px 24px !important;
     align-items: center !important;
     text-align: center !important;
   }
@@ -374,24 +378,39 @@
      BEFORE the swiper (order: 3) — per request, the button should
      stay grouped with the header/subheader at the top, not trail
      after the listing photos.
-     FIX: Lofty's own native mobile CSS (index.vue:100, confirmed via
-     DevTools) sets margin: 20px auto 0 auto on .btn-wrap — the "0"
-     bottom margin combined with our order:2 placement meant the
-     button had no breathing room below it before the swiper started,
-     and visually seemed to "block" the gradient from the bottom
-     since the gradient background lives on .left.title-item/.md-
-     house.layout14.mg-bg, not on .btn-wrap's own box. Explicit
-     margin override here (not just margin-top, all four sides) wins
-     over that native rule and gives clean, even spacing on both
-     sides of the button within the section. */
+     FIX (per request): removed the 24px top / 32px bottom margin —
+     button now sits directly against the title block above it, no
+     gap, since Lofty's own native margin (index.vue:100, margin:
+     20px auto 0 auto) is still overridden to 0 on all sides so
+     nothing sneaks back in. Small bottom padding kept on the
+     .house-container itself (see below) rather than on the button,
+     so there's still a touch of breathing room before the swiper
+     without pushing the button away from the header. */
   .md-house.layout14.mg-bg .house-container .btn-wrap {
     order: 2 !important;
     align-self: center !important;
-    margin: 24px 0 32px 0 !important;
+    margin: 0 !important;
     width: auto !important;
   }
   .md-house.layout14.mg-bg .house-container .layout14-house-swiper {
     order: 3 !important;
+  }
+  /* FIX: .house-container has more than the 3 children we can see/
+     target directly — the property slider itself is Vue-injected
+     markup not visible in a static DOM screenshot (confirmed per
+     request), and most of the gradient area we set is actually
+     sitting BEHIND that slider once it renders, not visible as the
+     open blue band shown in the reference screenshot. Since we can't
+     target the slider's own wrapper directly to inset it, bottom
+     padding is added to .house-container itself instead — this
+     keeps a visible strip of gradient between the button and wherever
+     the slider actually starts rendering, as a buffer, rather than
+     assuming the button's own spacing alone accounts for it. Revisit
+     with live DevTools on the actual slider wrapper class if this
+     buffer needs tuning — flagged as an estimate, not a confirmed
+     pixel value, since the slider's real markup isn't visible to us. */
+  .md-house.layout14.mg-bg .house-container {
+    padding-bottom: 24px !important;
   }
 }
 
