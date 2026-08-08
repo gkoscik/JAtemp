@@ -262,6 +262,8 @@
   .md-house.layout14.mg-bg .left.title-item .house-title .site-subtitle.left.desc,
   .md-house.layout14.mg-bg .left.title-item .house-title .site-subtitle.left.desc h4 {
     text-align: center !important;
+    width: 100% !important;
+    max-width: none !important;
   }
   .md-house.layout14.mg-bg .left.title-item .title-line {
     margin-left: auto !important;
