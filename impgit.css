@@ -292,30 +292,43 @@
     margin-left: auto !important;
     margin-right: auto !important;
   }
-  /* BUG FIX: .btn-wrap ("More Listings" button) is a third direct
-     flex child of .title-item.left, alongside .house-title and
-     .title-line (confirmed via live DOM inspection — see image2/3
-     in chat, Aug 2026). On desktop this reads fine, but on mobile
-     the button was rendering below the swiper instead of staying
-     grouped with the header/subheader text above it. Root cause:
-     this mobile block styled .house-title and .title-line but never
-     touched .btn-wrap, so it was left to inherit Lofty's native
-     order/sizing for that element, which pulled it out of the
-     visual grouping. Explicit order + centering forces it to stay
-     the third stacked item directly under .title-line, matching the
-     intended "header + subheader + button together" layout.
-     !important throughout per the standing rule for native overrides. */
-  .md-house.layout14.mg-bg .left.title-item .btn-wrap {
-    order: 3 !important;
+  /* BUG FIX (corrected — first attempt targeted the wrong parent):
+     .btn-wrap ("More Listings" button) is NOT a descendant of
+     .title-item.left on mobile — confirmed via live DOM inspection
+     (Aug 2026) that Lofty re-parents it at this breakpoint. Actual
+     structure differs by viewport:
+       Desktop: .house-container > .title-item.left > [.house-title,
+                 .title-line, .btn-wrap]  (button nested inside)
+       Mobile:  .house-container > [.title-item.left,
+                 .layout14-house-swiper, .btn-wrap]  (button promoted
+                 to a sibling of .title-item.left, after the swiper)
+     A descendant selector reaching into .title-item.left (the first
+     attempt) matches nothing on mobile since .btn-wrap isn't inside
+     it anymore — that's why that fix had zero effect. The real flex
+     container to reorder on mobile is .house-container itself, and
+     .house-container needs flex-direction: column set explicitly
+     here since we're relying on its default (row, per desktop) not
+     applying — confirm via DevTools if row/column still shows
+     unexpectedly after this change. */
+  .md-house.layout14.mg-bg .house-container {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .md-house.layout14.mg-bg .house-container .left.title-item {
+    order: 1 !important;
+  }
+  /* Button ordered directly after the title block (order: 2) and
+     BEFORE the swiper (order: 3) — per request, the button should
+     stay grouped with the header/subheader at the top, not trail
+     after the listing photos. */
+  .md-house.layout14.mg-bg .house-container .btn-wrap {
+    order: 2 !important;
     align-self: center !important;
     margin-top: 20px !important;
     width: auto !important;
   }
-  .md-house.layout14.mg-bg .left.title-item .house-title {
-    order: 1 !important;
-  }
-  .md-house.layout14.mg-bg .left.title-item .title-line {
-    order: 2 !important;
+  .md-house.layout14.mg-bg .house-container .layout14-house-swiper {
+    order: 3 !important;
   }
 }
 
