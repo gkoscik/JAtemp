@@ -170,6 +170,21 @@
   margin: 0 !important;
 }
 
+/* Search results drawer — bottom padding before footer.
+   Corrected target: the inner .search-result-house-list, not the
+   outer .search-result-drawer wrapper (initial version targeted
+   the wrong level). */
+.search-result-drawer.mg-scrollbar .drawer-body .search-result.mg-scrollbar .search-result-house-list {
+  padding-bottom: 50px !important;
+}
+
+/* Featured listings section title area (md-house layout14) —
+   background matches .stats-band-2's gradient exactly, for visual
+   consistency between the two sections. */
+.md-house.layout14.mg-bg .left.title-item {
+  background: linear-gradient(160deg, #1D4E6B 0%, #152233 100%) !important;
+}
+
 /* Evaluation banner (md-evaluation-banner layout1) — native block,
    CSS-only, no markup control. Styled to match the hero-1 h1/p
    treatment exactly (same font, size, color, shadow) for visual
