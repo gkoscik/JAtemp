@@ -247,7 +247,21 @@
    mobile reorder fix surfaced it. !important throughout — this is
    a native Lofty block (md-house layout14's own button markup, class
    .more-btn / .site-button), same specificity-fight risk as every
-   other native override in this file. */
+   other native override in this file.
+   REAL ROOT CAUSE of the padding-not-visually-changing bug (found
+   Aug 2026): Lofty's own native CSS hardcodes `height: 50px` and
+   `line-height: 48px` directly on `.more-btn`, and hardcodes
+   `width: 200px` on the parent `.btn-wrap`. Padding changes were
+   being correctly applied in the cascade (confirmed via DevTools)
+   but had ZERO visual effect because the box's actual dimensions
+   were pinned by these hardcoded height/width values regardless of
+   padding — a classic Lofty pattern, see the Bible's "Lofty
+   hardcodes dimensions" note. Fixed by explicitly overriding height/
+   width to auto so the box is sized by font-size + padding only,
+   the way every other button on this site behaves. */
+.md-house.layout14.mg-bg .btn-wrap {
+  width: auto !important;
+}
 .md-house.layout14.mg-bg .btn-wrap .more-btn,
 .md-house.layout14.mg-bg .btn-wrap .site-button {
   background: #912F40 !important;
@@ -260,6 +274,8 @@
   border-radius: 10px !important;
   border: none !important;
   padding: 0.95em 1.9em !important;
+  height: auto !important;
+  width: auto !important;
   transition: background-color 0.25s ease !important;
   display: inline-flex !important;
   align-items: center !important;
