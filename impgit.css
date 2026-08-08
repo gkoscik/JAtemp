@@ -1,17 +1,13 @@
 /* ============================================================
-   NAV DROP SHADOW — ISOLATED TEST, see note above before touching.
-   Only in the solid/scrolled state, not transparent-over-hero.
-   !important required — Lofty's own header rules also set
-   box-shadow and silently won without it.
-   ============================================================ */
-/* ============================================================
-   NAV DROP SHADOW — ISOLATED TEST, see note above before touching.
-   Only in the solid/scrolled state, not transparent-over-hero.
+   NAV DROP SHADOW — CONFIRMED WORKING via live testing (2nd
+   attempt). Only in the solid/scrolled state, not
+   transparent-over-hero.
    CONFIRMED via live DOM inspection: .transparent is toggled on
    the inner <div role="navigation">, NOT on <header class="md-header
-   layout3"> itself — the original selector targeted the wrong
-   element entirely, which is why the shadow never rendered at all
-   (not intermittent — a plain, confirmed selector miss).
+   layout3"> itself — the original selector (1st attempt, archived)
+   targeted the wrong element entirely, which is why the shadow
+   never rendered at all (not intermittent — a plain, confirmed
+   selector miss, not related to the earlier invisible-nav-text bug).
    !important required — Lofty's own header rules also set
    box-shadow and silently won without it.
    ============================================================ */
@@ -20,6 +16,27 @@
 }
 .md-header.layout3 [role="navigation"].transparent {
   box-shadow: none !important;
+}
+
+/* ============================================================
+   SUBMENU DROPDOWN — rounded corners, matching the site's button
+   radius (10px). Selector CONFIRMED via live DOM inspection:
+   <li class="menu-item has-child"> > <a class="has-child-a"> +
+   <div class="wrapper"><ol class="submenu hidden-scrollbar">...
+   — the .wrapper div is the direct dropdown panel container.
+   Only border-radius changed from the archived version (was 4px,
+   now 10px to match .btn); the opacity fade transition is kept
+   since it's needed for the dropdown to render at all sensibly
+   (display can't be animated, hence opacity + overflow:hidden).
+   ============================================================ */
+.md-header.layout3 .head-menu > .menu-item.has-child > .wrapper {
+  border-radius: 10px !important;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.md-header.layout3 .head-menu > .menu-item.has-child:hover > .wrapper {
+  opacity: 1;
 }
 
 /* ============================================================
@@ -57,6 +74,8 @@
 .md-house.layout8 .mls-box p { color: #fff !important; }
 .md-house.layout8 .house-next.iconfont,
 .md-house.layout8 .house-prev.iconfont { color: #912F40 !important; }
+.md-house.layout8 .house-next.iconfont::before,
+.md-house.layout8 .house-prev.iconfont::before { color: #fff !important; }
 .md-house.layout8 .btn-wrap .view-all-listings-btn {
   background: #912F40 !important;
   color: #f7f6f2 !important;
@@ -68,6 +87,24 @@
 }
 .md-house.layout8 .btn-wrap .view-all-listings-btn:hover {
   background: #A63B4D !important;
+}
+
+/* Listing carousel section title — styled to match .about-3 h2
+   exactly (same font/size/weight/color), plus title-case via
+   text-transform: capitalize (uppercases first letter of each
+   word, lowercases the rest — the correct CSS property for this;
+   can't guarantee character-by-character casing beyond what the
+   source text itself provides, e.g. "HD" would stay "Hd"). */
+.md-house.layout8 .title-wrap h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  margin: 0 !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.01em !important;
+  max-width: 20ch !important;
+  color: #16181c !important;
+  font-weight: 400 !important;
+  font-size: clamp(2.1rem, 1.7rem + 1.6vw, 3.25rem) !important;
+  text-transform: capitalize !important;
 }
 
 /* Search results drawer — listing address headings */
