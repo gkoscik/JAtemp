@@ -193,13 +193,18 @@
 .md-house.layout14.mg-bg .left.title-item {
   background: linear-gradient(160deg, #1D4E6B 0%, #152233 100%) !important;
 }
-/* Decorative line under the title — hidden per request, along with
-   its margin (display:none removes it from layout entirely,
-   margin explicitly zeroed as a defensive measure in case any
-   sibling relied on margin-collapse with it). */
+/* Decorative line under the title — kept visible (hide request
+   reverted), margin set to match .about-3__intro's gap (20px),
+   same spacing used between "Joel Androna" and its following
+   paragraph in the About section. Color set to a soft off-white
+   at low opacity — same pattern used for divider lines elsewhere
+   against this same dark gradient background (.stats-band-2's
+   item dividers, rgba(247,246,242,0.15)) — was too dark before to
+   read as an intentional divider rather than nearly invisible. */
 .md-house.layout14.mg-bg .left.title-item .title-line {
-  display: none !important;
-  margin: 0 !important;
+  margin: 20px 0 !important;
+  background-color: rgba(247,246,242,0.3) !important;
+  border-color: rgba(247,246,242,0.3) !important;
 }
 /* Title — styled to match .about-3 h2 exactly, but white (this
    section has the dark gradient background above, not light). */
