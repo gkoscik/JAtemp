@@ -209,10 +209,63 @@
 
 /* Featured listings section title area (md-house layout14) —
    background matches .stats-band-2's gradient exactly, for visual
-   consistency between the two sections. */
+   consistency between the two sections.
+   FIX: gradient applied redundantly to three nested elements —
+   .md-house.layout14.mg-bg (outer parent), .house-container (the
+   flex box directly holding all 3 children: title block, button,
+   swiper), and .left.title-item — so the gradient is guaranteed to
+   cover the entire blue area behind all 3 children with no gap,
+   regardless of which specific element's own padding/margin was
+   otherwise exposing the page's base background color. Confirmed
+   via DevTools that .md-house.layout14.mg-bg carries its own
+   padding-top: 40px (Lofty's inline style, --g-bg-color) which sits
+   OUTSIDE .left.title-item's background box alone — that's the
+   original visible-gap bug. Layering the same gradient on all three
+   containers (rather than trying to pin down the exact one
+   responsible) is deliberate belt-and-suspenders here since the
+   swiper itself is opaque (real listing photos) and will correctly
+   cover the gradient where it sits — this only affects the area
+   above/around the swiper, not behind it. */
+.md-house.layout14.mg-bg {
+  background: linear-gradient(160deg, #1D4E6B 0%, #152233 100%) !important;
+}
+.md-house.layout14.mg-bg .house-container {
+  background: linear-gradient(160deg, #1D4E6B 0%, #152233 100%) !important;
+}
 .md-house.layout14.mg-bg .left.title-item {
   background: linear-gradient(160deg, #1D4E6B 0%, #152233 100%) !important;
 }
+/* "More Listings" button (.btn-wrap > a) — styled to match
+   .btn-primary from Section 1 (Hero) exactly: burgundy fill, Jost
+   medium weight, 10px radius, same hover shift. Previously fully
+   unstyled (Lofty native default gray/purple button, confirmed via
+   screenshot) since this element was never targeted before the
+   mobile reorder fix surfaced it. !important throughout — this is
+   a native Lofty block (md-house layout14's own button markup, class
+   .more-btn / .site-button), same specificity-fight risk as every
+   other native override in this file. */
+.md-house.layout14.mg-bg .btn-wrap .more-btn,
+.md-house.layout14.mg-bg .btn-wrap .site-button {
+  background: #912F40 !important;
+  color: #f7f6f2 !important;
+  font-family: 'Jost', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 1rem !important;
+  letter-spacing: 0.01em !important;
+  line-height: 1 !important;
+  border-radius: 10px !important;
+  border: none !important;
+  padding: 0.95em 1.9em !important;
+  transition: background-color 0.25s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.md-house.layout14.mg-bg .btn-wrap .more-btn:hover,
+.md-house.layout14.mg-bg .btn-wrap .site-button:hover {
+  background: #A63B4D !important;
+}
+
 /* Decorative line under the title — kept visible (hide request
    reverted), margin set to match .about-3__intro's gap (20px),
    same spacing used between "Joel Androna" and its following
@@ -273,7 +326,7 @@
     padding-bottom: 0 !important;
   }
   .md-house.layout14.mg-bg .left.title-item {
-    padding: 32px 24px !important;
+    padding: 32px 24px 0 24px !important;
     align-items: center !important;
     text-align: center !important;
   }
@@ -320,11 +373,21 @@
   /* Button ordered directly after the title block (order: 2) and
      BEFORE the swiper (order: 3) — per request, the button should
      stay grouped with the header/subheader at the top, not trail
-     after the listing photos. */
+     after the listing photos.
+     FIX: Lofty's own native mobile CSS (index.vue:100, confirmed via
+     DevTools) sets margin: 20px auto 0 auto on .btn-wrap — the "0"
+     bottom margin combined with our order:2 placement meant the
+     button had no breathing room below it before the swiper started,
+     and visually seemed to "block" the gradient from the bottom
+     since the gradient background lives on .left.title-item/.md-
+     house.layout14.mg-bg, not on .btn-wrap's own box. Explicit
+     margin override here (not just margin-top, all four sides) wins
+     over that native rule and gives clean, even spacing on both
+     sides of the button within the section. */
   .md-house.layout14.mg-bg .house-container .btn-wrap {
     order: 2 !important;
     align-self: center !important;
-    margin-top: 20px !important;
+    margin: 24px 0 32px 0 !important;
     width: auto !important;
   }
   .md-house.layout14.mg-bg .house-container .layout14-house-swiper {
