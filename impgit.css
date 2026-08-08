@@ -170,6 +170,19 @@
   margin: 0 !important;
 }
 
+/* CTA banner subtitle — max-width constraint, centered within the
+   banner. Note: given tonight's finding that similar site-title/
+   site-subtitle elements sometimes carry inline style="" attributes
+   (font-size, possibly width) that no external CSS can override —
+   confirm this actually takes effect after pushing; if not, check
+   for an inline style on this specific element via DevTools before
+   assuming the selector is wrong. */
+.md-cta.layout1.mg-bg .banner.single.mobile-no-margin .f-col.center .site-subtitle.center {
+  max-width: 600px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 /* Search results drawer — bottom padding before footer.
    Corrected target: the inner .search-result-house-list, not the
    outer .search-result-drawer wrapper (initial version targeted
@@ -249,6 +262,9 @@
    if this doesn't visually take effect, the align is likely inline
    too and will need the same treatment as the font-size finding.) */
 @media (max-width: 800px) {
+  .md-house.layout14.mg-bg {
+    padding-bottom: 0 !important;
+  }
   .md-house.layout14.mg-bg .left.title-item {
     padding: 32px 24px !important;
     align-items: center !important;
