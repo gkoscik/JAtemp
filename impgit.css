@@ -236,9 +236,9 @@
 .md-house.layout14.mg-bg {
   background: linear-gradient(160deg, #1D4E6B 0%, #152233 35%, #152233 100%) !important;
 }
-.md-house.layout14.mg-bg .house-container {
+/* .md-house.layout14.mg-bg .house-container {
   background: linear-gradient(160deg, #1D4E6B 0%, #152233 35%, #152233 100%) !important;
-}
+} */
 /* "More Listings" button (.btn-wrap > a) — styled to match
    .btn-primary from Section 1 (Hero) exactly: burgundy fill, Jost
    medium weight, 10px radius, same hover shift. Previously fully
