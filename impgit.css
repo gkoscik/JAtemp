@@ -221,8 +221,8 @@
    --g-bg-color) which sits OUTSIDE .left.title-item's own box —
    that's the original visible-gap bug this was solving. Two layers
    (parent + house-container) is enough to cover that without the
-   third, misaligned layer. */
-   FIX: gradient stops tightened from the original 0%/100% (matching
+   third, misaligned layer.
+   FIX 2: gradient stops tightened from the original 0%/100% (matching
    .stats-band-2's shorter section) to 0%/35% here specifically —
    this section is much taller than .stats-band-2 due to the image
    slider beneath it, so spreading the same two color stops across
