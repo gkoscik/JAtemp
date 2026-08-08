@@ -183,6 +183,13 @@
   margin-right: auto !important;
 }
 
+/* Home value estimate form (md-nbr-form) — same gradient
+   background as Active Listings (.md-house.layout14) and
+   .stats-band-2, for visual consistency across the site. */
+.md-nbr-form.layout1.mg-bg.disable-delete.disable-draggable.disable-codeable {
+  background: linear-gradient(160deg, #1D4E6B 0%, #152233 100%) !important;
+}
+
 /* Search results drawer — bottom padding before footer.
    Corrected target: the inner .search-result-house-list, not the
    outer .search-result-drawer wrapper (initial version targeted
