@@ -1,32 +1,3 @@
-/* ============================================================
-   .mg-container BREAKOUT — required for every full-bleed embed
-   section (position:relative; width:100vw; left:50%; etc. pattern).
-   Lofty wraps Embed Block content in .mg-container, which has
-   overflow:hidden and a constrained max-width by default. This
-   can't be inlined into the embed itself since .mg-container is
-   the PARENT Lofty generates around the embed, not part of it.
-   Add a new line here whenever a new full-bleed section is added.
-
-   UPDATE: as of the FOUC investigation, these rules are now
-   duplicated INLINE in each full-bleed embed's own <style> tag
-   instead of living only here — see "Going forward" at the end of
-   this doc. Nothing currently needs an external-only breakout rule
-   (every full-bleed section we have is an embed with its own inline
-   copy), so this block is intentionally empty for now. If a future
-   full-bleed element exists OUTSIDE any embed (unlikely, but
-   possible), its breakout rule would go here instead.
-   ============================================================ */
-
-/* Removes default bottom margin Lofty adds to embed wrapper divs.
-   Also can't be inlined — targets Lofty's own wrapper, not embed content. */
-.md-custom-code { margin-bottom: 0 !important; }
-
-/* ============================================================
-   NATIVE LOFTY OVERRIDES — listings carousel, search drawer,
-   sell banner, cover title. All target Lofty's own native blocks,
-   not our embeds — must stay external.
-   ============================================================ */
-
 #app > div.md-snapshot-search.template4.disable-codeable > div.market_snapshot_container > div > div > h2 > div > div > div > h2,
 #app > div.md-form.layout2.mg-bg.disable-codeable > div.md-form-container > div.info-right > div > h2,
 #app > div.md-house.layout14.mg-bg.disable-codeable > div.house-container > div.title-item.left > div.house-title > div.site-title.left > h2,
@@ -91,7 +62,9 @@
 }
 
 #app > div.md-search.md-search-grid-list.template4.grid.disable-codeable > div.md-search-result.template4 > div.search-result-container > div.search-result.mg-scrollbar > div.explore-listings.mg-container.template4-listing-list,
-#app > div.md-search.md-search-grid-list.template4.grid.disable-codeable > div.md-search-result.template4 > div.search-result-container > div.search-result.mg-scrollbar > div.explore-nbr.mg-container.template4-listing-list {
+#app > div.md-search.md-search-grid-list.template4.grid.disable-codeable > div.md-search-result.template4 > div.search-result-container > div.search-result.mg-scrollbar > div.explore-nbr.mg-container.template4-listing-list,
+#app > div.md-search-grid-list.layout1.md-search.grid.disable-codeable > div.md-search-result.layout1 > div.normal.search-result-drawer.mg-scrollbar > div.drawer-body > div.search-result.mg-scrollbar > div.explore-listings.mg-container.broker-listing-list,
+#app > div.md-search-grid-list.layout1.md-search.grid.disable-codeable > div.md-search-result.layout1 > div.normal.search-result-drawer.mg-scrollbar > div.drawer-body > div.search-result.mg-scrollbar > div.explore-nbr.mg-container.broker-listing-list {
   display: none !important;
 }
 
@@ -127,14 +100,21 @@
   background: #A63B4D !important;
 }
 
-#app > div.md-form.layout2.mg-bg.disable-codeable > div.md-form-container > div.info-right > form > div.submit-content > div > button {
+#app > div.md-form.layout2.mg-bg.disable-codeable > div.md-form-container > div.info-right > form > div.submit-content > div > button,
+#app > div.md-snapshot-search.template4.disable-codeable > div.market_snapshot_container > div > div > div > div > div.board > div {
   border-radius: 10px !important;
 }
 
 #app > div.md-search-grid-list.layout1.md-search.grid.disable-codeable > section > div.search-content > section > div.search-more-center-container > div.keyword-search-wrap > div > div.keyword-search-content,
 #app > div.md-search-grid-list.layout1.md-search.grid.disable-codeable > section > div.search-content > section > div.search-more-center-container > div.site-wrap-box.search-detail-tool > div,
-#app > div.md-search-grid-list.layout1.md-search.grid.disable-codeable > section > div.search-content > section > div.search-more-center-container > div.site-wrap-box.search-detail-tool > label {
+#app > div.md-search-grid-list.layout1.md-search.grid.disable-codeable > section > div.search-content > section > div.search-more-center-container > div.site-wrap-box.search-detail-tool > label,
+#app > div.md-search-grid-list.layout1.md-search.grid.disable-codeable > section > div.search-content > section > div.search-more-center-container > div.site-wrap-box.search-detail-tool > div > div,
+#app > div.md-snapshot-search.template4.disable-codeable > section > div > div.scroll-zone.search_center > section > div > div.im-popover > div.reference_wrap > label {
   border-radius: 6px !important;
+}
+
+#app > div.md-search-grid-list.layout1.md-search.grid.disable-codeable > div.md-search-result.layout1 > div.normal.search-result-drawer.mg-scrollbar > div.drawer-body > div.search-result.mg-scrollbar > div.comp-pagination.layout1 > ul > li {
+  border-radius: 4px !important;
 }
 
 #app > div.md-snapshot-search.template4.disable-codeable h2.mr-snap-title.template4 {
@@ -142,89 +122,33 @@
 }
 
 /* ============================================================
-   HEADING SIZE CONSISTENCY — Market Snapshot widget title, "Get
-   More Information" form title, and blog section title all
-   clamped to the site's standard H2 scale (same clamp used on
-   .about-3 h2, .faq-6 h2, .directory-12 h2, etc.) so every section
-   heading on the site scales identically regardless of which
-   native Lofty block renders it. Added Aug 2026 per confirmed
-   inconsistency across native block headings — see chat history.
-   !important throughout per the standing rule for native overrides.
+   .mg-container BREAKOUT — required for every full-bleed embed
+   section (position:relative; width:100vw; left:50%; etc. pattern).
+   Lofty wraps Embed Block content in .mg-container, which has
+   overflow:hidden and a constrained max-width by default. This
+   can't be inlined into the embed itself since .mg-container is
+   the PARENT Lofty generates around the embed, not part of it.
+   Add a new line here whenever a new full-bleed section is added.
+
+   UPDATE: as of the FOUC investigation, these rules are now
+   duplicated INLINE in each full-bleed embed's own <style> tag
+   instead of living only here — see "Going forward" at the end of
+   this doc. Nothing currently needs an external-only breakout rule
+   (every full-bleed section we have is an embed with its own inline
+   copy), so this block is intentionally empty for now. If a future
+   full-bleed element exists OUTSIDE any embed (unlikely, but
+   possible), its breakout rule would go here instead.
    ============================================================ */
 
-/* Market Snapshot widget title */
-#app > div.md-snapshot-search.template4.disable-codeable > div.market_snapshot_container > div > div > h2 > div > div > div > h2 {
-  font-size: clamp(2.1rem, 1.7rem + 1.6vw, 3.25rem) !important;
-}
-
-/* "Get More Information" form title */
-#app > div.md-form.layout2.mg-bg.disable-codeable > div.md-form-container > div.info-right > div > h2 {
-  font-size: clamp(2.1rem, 1.7rem + 1.6vw, 3.25rem) !important;
-}
-
-/* Blog section title — this is a <p>, not a real heading tag, per
-   live DOM inspection. Faked to LOOK like an h2 visually (same
-   clamp, weight, line-height as every other section h2) since the
-   actual tag can't be changed — Lofty renders this natively with no
-   markup control. This remains a semantic gap (a <p> masquerading
-   as a heading isn't a real fix for screen readers/SEO heading
-   hierarchy) — consistent with the Bible's existing "Fake headings"
-   section, which documents this same Lofty limitation elsewhere on
-   the site. If a real <h2> ever becomes available in a future Lofty
-   update, swap the selector's trailing `p` for `h2` and drop this
-   note. */
-#app > div.md-blog.layout9.mg-bg.has-full-layout.disable-codeable > div.blog-container.f-col > div.site-title.center.blog-title > p {
-  font-size: clamp(2.1rem, 1.7rem + 1.6vw, 3.25rem) !important;
-  font-family: 'Cormorant Garamond', serif !important;
-  font-weight: 400 !important;
-  line-height: 1.1 !important;
-  margin: 0 !important;
-}
+/* Removes default bottom margin Lofty adds to embed wrapper divs.
+   Also can't be inlined — targets Lofty's own wrapper, not embed content. */
+.md-custom-code { margin-bottom: 0 !important; }
 
 /* ============================================================
-   BLOG CARD TEXT — always white, desktop/tablet/mobile, all
-   viewports unconditionally. Two separate selector chains are
-   required: .blog-content.layout-full .right-column (desktop
-   markup) and .blog-content-mobile .small-cards-section (a
-   genuinely SEPARATE DOM subtree Lofty renders for mobile — not
-   just a responsive reflow of the same elements, confirmed via the
-   selectors supplied). Both chains need to stay live simultaneously
-   so whichever subtree Lofty is actually showing at any given width
-   is covered — dropping either one would leave a gap at whatever
-   breakpoint that subtree becomes visible. dropped all nth-child(1)
-   scoping from the originally-supplied selectors so these apply to
-   EVERY card, not just the first. !important per the standing rule.
+   NATIVE LOFTY OVERRIDES — listings carousel, search drawer,
+   sell banner, cover title. All target Lofty's own native blocks,
+   not our embeds — must stay external.
    ============================================================ */
-.md-blog.layout9.mg-bg.has-full-layout.disable-codeable
-  .blog-container.f-col
-  .blog-content.layout-full
-  .right-column
-  a
-  .content-wrapper
-  h3,
-.md-blog.layout9.mg-bg.has-full-layout.disable-codeable
-  .blog-container.f-col
-  .blog-content.layout-full
-  .right-column
-  a
-  .content-wrapper
-  p,
-.md-blog.layout9.mg-bg.has-full-layout.disable-codeable
-  .blog-container.f-col
-  .blog-content-mobile
-  .small-cards-section
-  a
-  .content-wrapper
-  h3,
-.md-blog.layout9.mg-bg.has-full-layout.disable-codeable
-  .blog-container.f-col
-  .blog-content-mobile
-  .small-cards-section
-  a
-  .content-wrapper
-  p {
-  color: #ffffff !important;
-}
 
 /* Listing carousel (md-house layout8) */
 .md-house.layout8 .house-info .addressAndprice .address-wrap p { color: #fff !important; }
