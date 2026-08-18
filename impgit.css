@@ -27,6 +27,120 @@
    not our embeds — must stay external.
    ============================================================ */
 
+#app > div.md-snapshot-search.template4.disable-codeable > div.market_snapshot_container > div > div > h2 > div > div > div > h2,
+#app > div.md-form.layout2.mg-bg.disable-codeable > div.md-form-container > div.info-right > div > h2,
+#app > div.md-house.layout14.mg-bg.disable-codeable > div.house-container > div.title-item.left > div.house-title > div.site-title.left > h2,
+#app > div.md-cta.layout1.mg-bg.disable-codeable > div.banner.single.mobile-no-margin > div.f-col.center > div > div.site-title.center > h2,
+#app > div.md-blog.layout9.mg-bg.has-full-layout.disable-codeable > div.blog-container.f-col > div.site-title.center.blog-title > h2,
+#app > div.md-area-overview.layout2.mg-bg.disable-delete.disable-codeable > div.detail-contents-container > div.detail-contents.mg-container > div > div > div.site-title.center.detail-item-title > h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.01em !important;
+  font-weight: 400 !important;
+  font-size: clamp(2.1rem, 1.7rem + 1.6vw, 3.25rem) !important;
+}
+#app > div.md-snapshot-search.template4.disable-codeable > div.market_snapshot_container > div > div > h2 > div > div > div > h2,
+#app > div.md-form.layout2.mg-bg.disable-codeable > div.md-form-container > div.info-right > div > h2,
+#app > div.md-house.layout14.mg-bg.disable-codeable > div.house-container > div.title-item.left > div.house-title > div.site-title.left > h2,
+#app > div.md-cta.layout1.mg-bg.disable-codeable > div.banner.single.mobile-no-margin > div.f-col.center > div > div.site-title.center > h2 {
+  max-width: 20ch !important;
+  color: #16181c !important;
+}
+#app > div.md-blog.layout9.mg-bg.has-full-layout.disable-codeable > div.blog-container.f-col > div.site-title.center.blog-title > h2,
+#app > div.md-area-overview.layout2.mg-bg.disable-delete.disable-codeable > div.detail-contents-container > div.detail-contents.mg-container > div > div > div.site-title.center.detail-item-title > h2 {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+#app > div.md-blog.layout9.mg-bg.has-full-layout.disable-codeable > div.blog-container.f-col > div.site-title.center.blog-title > h2 { color: #ffffff !important; }
+#app > div.md-area-overview.layout2.mg-bg.disable-delete.disable-codeable > div.detail-contents-container > div.detail-contents.mg-container > div > div > div.site-title.center.detail-item-title > h2 { color: #16181c !important; }
+
+#app > div.md-area-overview.layout2.mg-bg.disable-delete.disable-codeable > div.area-overview-container.mg-container > div.media-content-v2.f-col > div > h1 {
+  font-family: 'Cormorant Garamond', serif !important;
+  margin: 0 !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.01em !important;
+  color: #16181c !important;
+  font-weight: 400 !important;
+  font-size: clamp(2.75rem, 2.1rem + 2.6vw, 5rem) !important;
+}
+
+#app > div.md-area-overview.layout2.mg-bg.disable-delete.disable-codeable > div.area-overview-container.mg-container > div.media-content-v2.f-col > div > div.banner-content > div > div.view-more-content > p,
+#app > div.md-area-overview.layout2.mg-bg.disable-delete.disable-codeable > div.detail-contents-container > div.detail-contents.mg-container > div > div > div.site-p.center.normal.detail-item-description > p {
+  font-family: 'Jost', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: clamp(1rem, 0.95rem + 0.2vw, 1.125rem) !important;
+  line-height: 1.7 !important;
+  color: #454a52 !important;
+  max-width: 700px !important;
+  margin: 0 auto !important;
+}
+
+.md-blog.layout9.mg-bg.has-full-layout.disable-codeable .blog-container.f-col .blog-content.layout-full .right-column a .content-wrapper h3,
+.md-blog.layout9.mg-bg.has-full-layout.disable-codeable .blog-container.f-col .blog-content.layout-full .right-column a .content-wrapper p,
+.md-blog.layout9.mg-bg.has-full-layout.disable-codeable .blog-container.f-col .blog-content-mobile .small-cards-section a .content-wrapper h3,
+.md-blog.layout9.mg-bg.has-full-layout.disable-codeable .blog-container.f-col .blog-content-mobile .small-cards-section a .content-wrapper p,
+#app > div.md-blog.layout9.mg-bg.has-full-layout.disable-codeable > div.blog-container.f-col > div.site-title.center.blog-title > h2 {
+  color: #ffffff !important;
+}
+
+.md-blog.layout9.mg-bg.has-full-layout.disable-codeable.module-selected .blog-container.f-col .blog-content.layout-full .right-column a .content-wrapper span {
+  background-color: #f5f5f5 !important;
+}
+
+#app > div.md-search.md-search-grid-list.template4.grid.disable-codeable > div.md-search-result.template4 > div.search-result-container > div.search-result.mg-scrollbar > div.explore-listings.mg-container.template4-listing-list,
+#app > div.md-search.md-search-grid-list.template4.grid.disable-codeable > div.md-search-result.template4 > div.search-result-container > div.search-result.mg-scrollbar > div.explore-nbr.mg-container.template4-listing-list {
+  display: none !important;
+}
+
+#app > div.md-blog.layout9.mg-bg.has-full-layout.disable-codeable > div.blog-container.f-col > div.blog-footer {
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+#app > div.md-blog.layout9.mg-bg.has-full-layout.disable-codeable > div.blog-container.f-col > div.blog-footer > a {
+  font-family: 'Jost', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 1rem !important;
+  letter-spacing: 0.01em !important;
+  line-height: 1 !important;
+  border-radius: 10px !important;
+  padding: 0.95em 1.9em !important;
+  border: none !important;
+  height: auto !important;
+  width: auto !important;
+  cursor: pointer !important;
+  transition: background-color 0.25s ease !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #912F40 !important;
+  color: #f7f6f2 !important;
+}
+#app > div.md-blog.layout9.mg-bg.has-full-layout.disable-codeable > div.blog-container.f-col > div.blog-footer > a:hover {
+  background: #A63B4D !important;
+}
+
+#app > div.md-form.layout2.mg-bg.disable-codeable > div.md-form-container > div.info-right > form > div.submit-content > div > button {
+  border-radius: 10px !important;
+}
+
+#app > div.md-search-grid-list.layout1.md-search.grid.disable-codeable > section > div.search-content > section > div.search-more-center-container > div.keyword-search-wrap > div > div.keyword-search-content,
+#app > div.md-search-grid-list.layout1.md-search.grid.disable-codeable > section > div.search-content > section > div.search-more-center-container > div.site-wrap-box.search-detail-tool > div,
+#app > div.md-search-grid-list.layout1.md-search.grid.disable-codeable > section > div.search-content > section > div.search-more-center-container > div.site-wrap-box.search-detail-tool > label {
+  border-radius: 6px !important;
+}
+
+#app > div.md-snapshot-search.template4.disable-codeable h2.mr-snap-title.template4 {
+  display: block !important;
+}
+
 /* ============================================================
    HEADING SIZE CONSISTENCY — Market Snapshot widget title, "Get
    More Information" form title, and blog section title all
