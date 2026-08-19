@@ -3,7 +3,8 @@
 #app > div.md-house.layout14.mg-bg.disable-codeable > div.house-container > div.title-item.left > div.house-title > div.site-title.left > h2,
 #app > div.md-cta.layout1.mg-bg.disable-codeable > div.banner.single.mobile-no-margin > div.f-col.center > div > div.site-title.center > h2,
 #app > div.md-blog.layout9.mg-bg.has-full-layout.disable-codeable > div.blog-container.f-col > div.site-title.center.blog-title > h2,
-#app > div.md-area-overview.layout2.mg-bg.disable-delete.disable-codeable > div.detail-contents-container > div.detail-contents.mg-container > div > div > div.site-title.center.detail-item-title > h2 {
+#app > div.md-area-overview.layout2.mg-bg.disable-delete.disable-codeable > div.detail-contents-container > div.detail-contents.mg-container > div > div > div.site-title.center.detail-item-title > h2,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > div.site-title > h2 {
   font-family: 'Cormorant Garamond', serif !important;
   margin: 0 !important;
   margin-bottom: 0 !important;
@@ -53,8 +54,23 @@
 .md-blog.layout9.mg-bg.has-full-layout.disable-codeable .blog-container.f-col .blog-content.layout-full .right-column a .content-wrapper p,
 .md-blog.layout9.mg-bg.has-full-layout.disable-codeable .blog-container.f-col .blog-content-mobile .small-cards-section a .content-wrapper h3,
 .md-blog.layout9.mg-bg.has-full-layout.disable-codeable .blog-container.f-col .blog-content-mobile .small-cards-section a .content-wrapper p,
-#app > div.md-blog.layout9.mg-bg.has-full-layout.disable-codeable > div.blog-container.f-col > div.site-title.center.blog-title > h2 {
+#app > div.md-blog.layout9.mg-bg.has-full-layout.disable-codeable > div.blog-container.f-col > div.site-title.center.blog-title > h2,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > div.site-title > h2,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > div.site-subtitle.desc > p,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > div.price-fav > a > div,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > div.price-fav > a > div *,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > div.house-basic.clearfix,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > div.house-basic.clearfix *,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > h3 {
   color: #ffffff !important;
+}
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > div.house-basic.clearfix::before,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > div.house-basic.clearfix::after {
+  color: #ffffff !important;
+}
+
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > div.house-footer > p {
+  color: #f5f5f5 !important;
 }
 
 .md-blog.layout9.mg-bg.has-full-layout.disable-codeable.module-selected .blog-container.f-col .blog-content.layout-full .right-column a .content-wrapper span {
@@ -113,12 +129,41 @@
 #app > div.md-nbr-form.layout1.mg-bg.disable-delete.disable-draggable.disable-codeable > div.nbr-form-container.f-col > div.line-content > div.line-form > div > div.form-wrap > form > div.input-content > div > div.v-input.fullname.input-box,
 #app > div.md-nbr-form.layout1.mg-bg.disable-delete.disable-draggable.disable-codeable > div.nbr-form-container.f-col > div.line-content > div.line-form > div > div.form-wrap > form > div.input-content > div > div.v-input.email.input-box,
 #app > div.md-nbr-form.layout1.mg-bg.disable-delete.disable-draggable.disable-codeable > div.nbr-form-container.f-col > div.line-content > div.line-form > div > div.form-wrap > form > div.input-content > div > div.v-input.phone.input-box,
-#app > div.md-nbr-form.layout1.mg-bg.disable-delete.disable-draggable.disable-codeable > div.nbr-form-container.f-col > div.line-content > div.line-form > div > div.form-wrap > form > div.submit-content {
+#app > div.md-nbr-form.layout1.mg-bg.disable-delete.disable-draggable.disable-codeable > div.nbr-form-container.f-col > div.line-content > div.line-form > div > div.form-wrap > form > div.submit-content,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > a {
   border-radius: 6px !important;
+}
+
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > a {
+  font-family: 'Jost', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 1rem !important;
+  letter-spacing: 0.01em !important;
+  line-height: 1 !important;
+  padding: 0.95em 1.9em !important;
+  border: none !important;
+  height: auto !important;
+  width: auto !important;
+  cursor: pointer !important;
+  transition: background-color 0.25s ease !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #912F40 !important;
+  color: #f7f6f2 !important;
+}
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > a:hover {
+  background: #A63B4D !important;
 }
 
 #app > div.md-search-grid-list.layout1.md-search.grid.disable-codeable > div.md-search-result.layout1 > div.normal.search-result-drawer.mg-scrollbar > div.drawer-body > div.search-result.mg-scrollbar > div.comp-pagination.layout1 > ul > li {
   border-radius: 4px !important;
+}
+
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > a {
+  border-radius: 12px !important;
 }
 
 #app > div.md-snapshot-search.template4.disable-codeable h2.mr-snap-title.template4 {
@@ -269,11 +314,28 @@
   margin-right: auto !important;
 }
 
-/* Home value estimate form (md-nbr-form) — same gradient
-   background as Active Listings (.md-house.layout14) and
-   .stats-band-2, for visual consistency across the site. */
+/* Home value estimate form (md-nbr-form) — updated to match the
+   blog section's gradient exactly (180deg, vertical, rgb(22,41,61)
+   end color) rather than the earlier 160deg/#152233 version, per
+   request. */
 .md-nbr-form.layout1.mg-bg.disable-delete.disable-draggable.disable-codeable {
-  background: linear-gradient(160deg, #1D4E6B 0%, #152233 100%) !important;
+  background: linear-gradient(180deg, #1D4E6B 0%, rgb(22, 41, 61) 100%) !important;
+}
+
+/* Blog section background (md-blog layout9) — vertical gradient,
+   bottom-to-top: #1D4E6B at top transitioning down to rgb(22,41,61)
+   at the bottom. Added to the master file after being live only as
+   a standalone snippet previously (flagged as a mistake to have
+   left out). */
+#app > div.md-blog.layout9.mg-bg.has-full-layout.disable-codeable {
+  background: linear-gradient(180deg, #1D4E6B 0%, rgb(22, 41, 61) 100%) !important;
+}
+
+/* Active Listings / featured house block (md-house layout1) — same
+   gradient treatment as the blog section and home value form, for
+   visual consistency across dark-background sections. */
+#app > div.md-house.layout1.mg-bg.disable-codeable {
+  background: linear-gradient(180deg, #1D4E6B 0%, rgb(22, 41, 61) 100%) !important;
 }
 
 /* Search results drawer — bottom padding before footer.
