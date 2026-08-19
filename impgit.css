@@ -109,7 +109,11 @@
 #app > div.md-search-grid-list.layout1.md-search.grid.disable-codeable > section > div.search-content > section > div.search-more-center-container > div.site-wrap-box.search-detail-tool > div,
 #app > div.md-search-grid-list.layout1.md-search.grid.disable-codeable > section > div.search-content > section > div.search-more-center-container > div.site-wrap-box.search-detail-tool > label,
 #app > div.md-search-grid-list.layout1.md-search.grid.disable-codeable > section > div.search-content > section > div.search-more-center-container > div.site-wrap-box.search-detail-tool > div > div,
-#app > div.md-snapshot-search.template4.disable-codeable > section > div > div.scroll-zone.search_center > section > div > div.im-popover > div.reference_wrap > label {
+#app > div.md-snapshot-search.template4.disable-codeable > section > div > div.scroll-zone.search_center > section > div > div.im-popover > div.reference_wrap > label,
+#app > div.md-nbr-form.layout1.mg-bg.disable-delete.disable-draggable.disable-codeable > div.nbr-form-container.f-col > div.line-content > div.line-form > div > div.form-wrap > form > div.input-content > div > div.v-input.fullname.input-box,
+#app > div.md-nbr-form.layout1.mg-bg.disable-delete.disable-draggable.disable-codeable > div.nbr-form-container.f-col > div.line-content > div.line-form > div > div.form-wrap > form > div.input-content > div > div.v-input.email.input-box,
+#app > div.md-nbr-form.layout1.mg-bg.disable-delete.disable-draggable.disable-codeable > div.nbr-form-container.f-col > div.line-content > div.line-form > div > div.form-wrap > form > div.input-content > div > div.v-input.phone.input-box,
+#app > div.md-nbr-form.layout1.mg-bg.disable-delete.disable-draggable.disable-codeable > div.nbr-form-container.f-col > div.line-content > div.line-form > div > div.form-wrap > form > div.submit-content {
   border-radius: 6px !important;
 }
 
