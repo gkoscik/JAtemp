@@ -28,7 +28,6 @@
 }
 #app > div.md-blog.layout9.mg-bg.has-full-layout.disable-codeable > div.blog-container.f-col > div.site-title.center.blog-title > h2 { color: #ffffff !important; }
 #app > div.md-area-overview.layout2.mg-bg.disable-delete.disable-codeable > div.detail-contents-container > div.detail-contents.mg-container > div > div > div.site-title.center.detail-item-title > h2 { color: #16181c !important; }
-
 #app > div.md-area-overview.layout2.mg-bg.disable-delete.disable-codeable > div.area-overview-container.mg-container > div.media-content-v2.f-col > div > h1 {
   font-family: 'Cormorant Garamond', serif !important;
   margin: 0 !important;
@@ -38,7 +37,6 @@
   font-weight: 400 !important;
   font-size: clamp(2.75rem, 2.1rem + 2.6vw, 5rem) !important;
 }
-
 #app > div.md-area-overview.layout2.mg-bg.disable-delete.disable-codeable > div.area-overview-container.mg-container > div.media-content-v2.f-col > div > div.banner-content > div > div.view-more-content > p,
 #app > div.md-area-overview.layout2.mg-bg.disable-delete.disable-codeable > div.detail-contents-container > div.detail-contents.mg-container > div > div > div.site-p.center.normal.detail-item-description > p,
 #app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > div.site-subtitle.desc > p {
@@ -50,41 +48,52 @@
   max-width: 700px !important;
   margin: 0 auto !important;
 }
-
 .md-blog.layout9.mg-bg.has-full-layout.disable-codeable .blog-container.f-col .blog-content.layout-full .right-column a .content-wrapper h3,
 .md-blog.layout9.mg-bg.has-full-layout.disable-codeable .blog-container.f-col .blog-content.layout-full .right-column a .content-wrapper p,
 .md-blog.layout9.mg-bg.has-full-layout.disable-codeable .blog-container.f-col .blog-content-mobile .small-cards-section a .content-wrapper h3,
 .md-blog.layout9.mg-bg.has-full-layout.disable-codeable .blog-container.f-col .blog-content-mobile .small-cards-section a .content-wrapper p,
 #app > div.md-blog.layout9.mg-bg.has-full-layout.disable-codeable > div.blog-container.f-col > div.site-title.center.blog-title > h2,
+#app > div.md-blog.layout9.mg-bg.has-full-layout > div > div.site-title.center.blog-title > p,
+#app > div.md-blog.layout9.mg-bg.has-full-layout > div > div.blog-content.layout-full > div.right-column > a > div > div.content-wrapper > div > h3,
+#app > div.md-blog.layout9.mg-bg.has-full-layout > div > div.blog-content.layout-full > div.right-column > a > div > div.content-wrapper > div > p,
+#app > div.md-blog.layout9.mg-bg.has-full-layout > div > div.blog-content-mobile > div.small-cards-section > a > div > div.content-wrapper > div > h3,
+#app > div.md-blog.layout9.mg-bg.has-full-layout > div > div.blog-content-mobile > div.small-cards-section > a > div > div.content-wrapper > div > p,
 #app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > div.site-title > h2,
 #app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > div.site-subtitle.desc > p,
 #app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > div.price-fav > a > div,
 #app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > div.price-fav > a > div *,
 #app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > div.house-basic.clearfix,
 #app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > div.house-basic.clearfix *,
-#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > h3 {
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > h3,
+#app > div.md-house.layout1.mg-bg > div > div.site-title > h2,
+#app > div.md-house.layout1.mg-bg > div > div.site-subtitle.desc > p,
+#app > div.md-house.layout1.mg-bg > div > ul > li > article > div > div.price-fav > a > div,
+#app > div.md-house.layout1.mg-bg > div > ul > li > article > div > div.price-fav > a > div *,
+#app > div.md-house.layout1.mg-bg > div > ul > li > article > div > div.house-basic.clearfix,
+#app > div.md-house.layout1.mg-bg > div > ul > li > article > div > div.house-basic.clearfix *,
+#app > div.md-house.layout1.mg-bg > div > ul > li > article > div > div.house-basic.clearfix > span.vertical-line,
+#app > div.md-house.layout1.mg-bg > div > ul > li > article > div > div.house-footer > p,
+#app > div.md-blog.layout9.mg-bg.has-full-layout > div > div.blog-content.layout-full > div.right-column > a > div > div.content-wrapper > span {
   color: #ffffff !important;
 }
 #app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > div.house-basic.clearfix::before,
-#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > div.house-basic.clearfix::after {
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > div.house-basic.clearfix::after,
+#app > div.md-house.layout1.mg-bg > div > ul > li > article > div > div.house-basic.clearfix::before,
+#app > div.md-house.layout1.mg-bg > div > ul > li > article > div > div.house-basic.clearfix::after {
   color: #ffffff !important;
 }
-
 #app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > div.house-footer > p {
   color: #f5f5f5 !important;
 }
-
 .md-blog.layout9.mg-bg.has-full-layout.disable-codeable.module-selected .blog-container.f-col .blog-content.layout-full .right-column a .content-wrapper span {
   background-color: #f5f5f5 !important;
 }
-
 #app > div.md-search.md-search-grid-list.template4.grid.disable-codeable > div.md-search-result.template4 > div.search-result-container > div.search-result.mg-scrollbar > div.explore-listings.mg-container.template4-listing-list,
 #app > div.md-search.md-search-grid-list.template4.grid.disable-codeable > div.md-search-result.template4 > div.search-result-container > div.search-result.mg-scrollbar > div.explore-nbr.mg-container.template4-listing-list,
 #app > div.md-search-grid-list.layout1.md-search.grid.disable-codeable > div.md-search-result.layout1 > div.normal.search-result-drawer.mg-scrollbar > div.drawer-body > div.search-result.mg-scrollbar > div.explore-listings.mg-container.broker-listing-list,
 #app > div.md-search-grid-list.layout1.md-search.grid.disable-codeable > div.md-search-result.layout1 > div.normal.search-result-drawer.mg-scrollbar > div.drawer-body > div.search-result.mg-scrollbar > div.explore-nbr.mg-container.broker-listing-list {
   display: none !important;
 }
-
 #app > div.md-blog.layout9.mg-bg.has-full-layout.disable-codeable > div.blog-container.f-col > div.blog-footer {
   min-width: 0 !important;
   height: auto !important;
@@ -116,13 +125,14 @@
 #app > div.md-blog.layout9.mg-bg.has-full-layout.disable-codeable > div.blog-container.f-col > div.blog-footer > a:hover {
   background: #A63B4D !important;
 }
-
 #app > div.md-form.layout2.mg-bg.disable-codeable > div.md-form-container > div.info-right > form > div.submit-content > div > button,
 #app > div.md-snapshot-search.template4.disable-codeable > div.market_snapshot_container > div > div > div > div > div.board > div,
-#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > a {
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > a,
+#app > div.md-house.layout1.mg-bg > div > a,
+#app > div.md-blog.layout9.mg-bg.has-full-layout > div > div.blog-footer,
+#app > div.md-blog.layout9.mg-bg.has-full-layout > div > div.blog-footer > a {
   border-radius: 10px !important;
 }
-
 #app > div.md-search-grid-list.layout1.md-search.grid.disable-codeable > section > div.search-content > section > div.search-more-center-container > div.keyword-search-wrap > div > div.keyword-search-content,
 #app > div.md-search-grid-list.layout1.md-search.grid.disable-codeable > section > div.search-content > section > div.search-more-center-container > div.site-wrap-box.search-detail-tool > div,
 #app > div.md-search-grid-list.layout1.md-search.grid.disable-codeable > section > div.search-content > section > div.search-more-center-container > div.site-wrap-box.search-detail-tool > label,
@@ -134,7 +144,6 @@
 #app > div.md-nbr-form.layout1.mg-bg.disable-delete.disable-draggable.disable-codeable > div.nbr-form-container.f-col > div.line-content > div.line-form > div > div.form-wrap > form > div.submit-content {
   border-radius: 6px !important;
 }
-
 #app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > a {
   font-family: 'Jost', sans-serif !important;
   font-weight: 500 !important;
@@ -157,20 +166,16 @@
 #app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > a:hover {
   background: #A63B4D !important;
 }
-
 #app > div.md-search-grid-list.layout1.md-search.grid.disable-codeable > div.md-search-result.layout1 > div.normal.search-result-drawer.mg-scrollbar > div.drawer-body > div.search-result.mg-scrollbar > div.comp-pagination.layout1 > ul > li {
   border-radius: 4px !important;
 }
-
 #app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li,
 #app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > a {
   border-radius: 12px !important;
 }
-
 #app > div.md-snapshot-search.template4.disable-codeable h2.mr-snap-title.template4 {
   display: block !important;
 }
-
 /* ============================================================
    .mg-container BREAKOUT — required for every full-bleed embed
    section (position:relative; width:100vw; left:50%; etc. pattern).
@@ -179,7 +184,6 @@
    can't be inlined into the embed itself since .mg-container is
    the PARENT Lofty generates around the embed, not part of it.
    Add a new line here whenever a new full-bleed section is added.
-
    UPDATE: as of the FOUC investigation, these rules are now
    duplicated INLINE in each full-bleed embed's own <style> tag
    instead of living only here — see "Going forward" at the end of
@@ -189,17 +193,14 @@
    full-bleed element exists OUTSIDE any embed (unlikely, but
    possible), its breakout rule would go here instead.
    ============================================================ */
-
 /* Removes default bottom margin Lofty adds to embed wrapper divs.
    Also can't be inlined — targets Lofty's own wrapper, not embed content. */
 .md-custom-code { margin-bottom: 0 !important; }
-
 /* ============================================================
    NATIVE LOFTY OVERRIDES — listings carousel, search drawer,
    sell banner, cover title. All target Lofty's own native blocks,
    not our embeds — must stay external.
    ============================================================ */
-
 /* Listing carousel (md-house layout8) */
 .md-house.layout8 .house-info .addressAndprice .address-wrap p { color: #fff !important; }
 .md-house.layout8 .house-info .mls-box p,
@@ -220,7 +221,6 @@
 .md-house.layout8 .btn-wrap .view-all-listings-btn:hover {
   background: #A63B4D !important;
 }
-
 /* Listing carousel section title — styled to match .about-3 h2
    exactly (same font/size/weight/color). NOTE: title-case was
    requested but text-transform: capitalize has no effect here —
@@ -242,7 +242,6 @@
   font-weight: 400 !important;
   font-size: clamp(2.1rem, 1.7rem + 1.6vw, 3.25rem) !important;
 }
-
 /* Search results drawer — listing address headings */
 .search-result-drawer .house-grid-container .house-detail h3,
 .search-result-drawer .search-result-house-list .house-table-column.address h3 {
@@ -271,7 +270,6 @@
   display: block !important;
   padding: clamp(14px, 10px + 1vw, 24px) 0 !important;
 }
-
 /* Sell banner + generic cover title/subtitle — white, centered */
 .md-sell-banner.layout1 .media-content-v2 .media-info h3,
 .md-sell-banner.layout1 .media-content-v2 .media-info h2 {
@@ -291,7 +289,6 @@
   width: auto !important;
   max-width: 20ch !important;
 }
-
 /* CTA banner button — center label inside button */
 .md-cta.layout1 .banner-button-v2.count-1 a {
   display: flex !important;
@@ -301,7 +298,6 @@
 .md-cta.layout1 .banner-button-v2.count-1 a span {
   margin: 0 !important;
 }
-
 /* CTA banner subtitle — max-width constraint, centered within the
    banner. Note: given tonight's finding that similar site-title/
    site-subtitle elements sometimes carry inline style="" attributes
@@ -314,7 +310,6 @@
   margin-left: auto !important;
   margin-right: auto !important;
 }
-
 /* Home value estimate form (md-nbr-form) — updated to match the
    blog section's gradient exactly (180deg, vertical, rgb(22,41,61)
    end color) rather than the earlier 160deg/#152233 version, per
@@ -322,23 +317,22 @@
 .md-nbr-form.layout1.mg-bg.disable-delete.disable-draggable.disable-codeable {
   background: linear-gradient(180deg, #1D4E6B 0%, rgb(22, 41, 61) 100%) !important;
 }
-
 /* Blog section background (md-blog layout9) — vertical gradient,
    bottom-to-top: #1D4E6B at top transitioning down to rgb(22,41,61)
    at the bottom. Added to the master file after being live only as
    a standalone snippet previously (flagged as a mistake to have
    left out). */
-#app > div.md-blog.layout9.mg-bg.has-full-layout.disable-codeable {
+#app > div.md-blog.layout9.mg-bg.has-full-layout.disable-codeable,
+#app > div.md-blog.layout9.mg-bg.has-full-layout {
   background: linear-gradient(180deg, #1D4E6B 0%, rgb(22, 41, 61) 100%) !important;
 }
-
 /* Active Listings / featured house block (md-house layout1) — same
    gradient as .stats-band-2 exactly, for visual consistency across
    dark-background sections. */
-#app > div.md-house.layout1.mg-bg.disable-codeable {
+#app > div.md-house.layout1.mg-bg.disable-codeable,
+#app > div.md-house.layout1.mg-bg {
   background: linear-gradient(180deg, #1D4E6B 0%, #152233 100%) !important;
 }
-
 /* Search results drawer — bottom padding before footer.
    Corrected target: the inner .search-result-house-list, not the
    outer .search-result-drawer wrapper (initial version targeted
@@ -346,7 +340,6 @@
 .search-result-drawer.mg-scrollbar .drawer-body .search-result.mg-scrollbar .search-result-house-list {
   padding-bottom: 50px !important;
 }
-
 /* Search results drawer — grid variant. Different drawer state
    (.mixed.left.compose vs. .normal) with a different inner grid
    element (.house-grid-container.f-col vs. .search-result-house-
@@ -355,8 +348,7 @@
 .search-result-drawer.mg-scrollbar.left.compose .drawer-body .search-result.mg-scrollbar .house-grid-container.f-col {
   padding-bottom: 50px !important;
 }
-
-/* Featured listings section title area (md-house layout14) —
+/* Featured listings title area (md-house layout14) —
    background matches .stats-band-2's gradient exactly, for visual
    consistency between the two sections. Gradient lives on
    .md-house.layout14.mg-bg (outer parent) ONLY now — per request,
@@ -429,7 +421,6 @@
 .md-house.layout14.mg-bg .btn-wrap .site-button:hover {
   background: #A63B4D !important;
 }
-
 /* Decorative line under the title — kept visible (hide request
    reverted), margin set to match .about-3__intro's gap (20px),
    same spacing used between "Joel Androna" and its following
@@ -476,7 +467,6 @@
   max-width: 62ch !important;
   color: #f7f6f2 !important;
 }
-
 /* Featured listings title area — center header/subheader/line and
    add breathing-room padding on tablet and below (≤800px), per
    request. Overrides text-align (was "left" per the inline
@@ -558,7 +548,6 @@
      own 40px bottom margin above (per request) — no separate buffer
      needed here, avoids doubling up the gap. */
 }
-
 /* Second mobile tier — split out from the 800px block above per the
    hero's own established two-tier pattern (see .hero-1 .btn, which
    has separate @media (max-width: 1080px) and @media (max-width:
@@ -579,7 +568,6 @@
     padding: 0.8em 1.4em !important;
   }
 }
-
 /* Evaluation banner (md-evaluation-banner layout1) — native block,
    CSS-only, no markup control. Styled to match the hero-1 h1/p
    treatment exactly (same font, size, color, shadow) for visual
