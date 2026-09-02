@@ -73,7 +73,14 @@
 #app > div.md-house.layout1.mg-bg > div > ul > li > article > div > div.house-basic.clearfix *,
 #app > div.md-house.layout1.mg-bg > div > ul > li > article > div > div.house-basic.clearfix > span.vertical-line,
 #app > div.md-house.layout1.mg-bg > div > ul > li > article > div > div.house-footer > p,
-#app > div.md-blog.layout9.mg-bg.has-full-layout > div > div.blog-content.layout-full > div.right-column > a > div > div.content-wrapper > span {
+#app > div.md-blog.layout9.mg-bg.has-full-layout > div > div.blog-content.layout-full > div.right-column > a > div > div.content-wrapper > span,
+#app > div.md-house.layout1.mg-bg > div > ul > li > article > div > h3 > a,
+#app > div.md-house.layout1.mg-bg > div > ul > li > article > div > h3 > a:link,
+#app > div.md-house.layout1.mg-bg > div > ul > li > article > div > h3 > a:visited,
+#app > div.md-house.layout1.mg-bg > div > ul > li > article > div > h3 > a:hover,
+#app > div.md-house.layout1.mg-bg > div > ul > li > article > div > h3 > a:focus,
+#app > div.md-house.layout1.mg-bg > div > ul > li > article > div > h3 > a:active,
+#app > div.md-house.layout1.mg-bg > div > ul > li > article > div > h3 > a * {
   color: #ffffff !important;
 }
 #app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > div.house-basic.clearfix::before,
