@@ -617,3 +617,43 @@
   margin: 0 auto !important;
   margin-bottom: 20px !important;
 }
+
+/* Featured listings prices — Lofty injects the dollar value into
+   .price-fav after paint. Keep it white on every card, every state,
+   and both mobile tiers (injected nodes often pick up Lofty's
+   default dark color at ≤1080). */
+#app > div.md-house.layout1.mg-bg > div > ul > li > article > div > div.price-fav,
+#app > div.md-house.layout1.mg-bg > div > ul > li > article > div > div.price-fav a,
+#app > div.md-house.layout1.mg-bg > div > ul > li > article > div > div.price-fav a > div,
+#app > div.md-house.layout1.mg-bg > div > ul > li > article > div > div.price-fav a > div *,
+#app > div.md-house.layout1.mg-bg .price-fav,
+#app > div.md-house.layout1.mg-bg .price-fav *,
+#app > div.md-house.layout1.mg-bg .price-fav a,
+#app > div.md-house.layout1.mg-bg .price-fav a:link,
+#app > div.md-house.layout1.mg-bg .price-fav a:visited,
+#app > div.md-house.layout1.mg-bg .price-fav a:hover,
+#app > div.md-house.layout1.mg-bg .price-fav a:focus,
+#app > div.md-house.layout1.mg-bg .price-fav a:active {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+@media (max-width: 1080px) {
+  #app > div.md-house.layout1.mg-bg .price-fav,
+  #app > div.md-house.layout1.mg-bg .price-fav *,
+  #app > div.md-house.layout1.mg-bg .price-fav a,
+  #app > div.md-house.layout1.mg-bg > div > ul > li > article > div > div.price-fav a > div {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+}
+
+@media (max-width: 600px) {
+  #app > div.md-house.layout1.mg-bg .price-fav,
+  #app > div.md-house.layout1.mg-bg .price-fav *,
+  #app > div.md-house.layout1.mg-bg .price-fav a,
+  #app > div.md-house.layout1.mg-bg > div > ul > li > article > div > div.price-fav a > div {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+}
