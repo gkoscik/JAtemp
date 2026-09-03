@@ -141,7 +141,9 @@
 #app > div.md-house.layout1.mg-bg > div > a,
 #app > div.md-blog.layout9.mg-bg.has-full-layout > div > div.blog-footer,
 #app > div.md-blog.layout9.mg-bg.has-full-layout > div > div.blog-footer > a,
-#app > div.md-form.layout2.mg-bg > div > div.info-right > form > div.submit-content {
+#app > div.md-form.layout2.mg-bg > div > div.info-right > form > div.submit-content,
+#app > div.md-house.layout1.mg-bg > div > ul > li > article > a,
+#app > div.md-house.layout1.mg-bg > div > ul > li > article > a > img {
   border-radius: 10px !important;
 }
 #app > div.md-search-grid-list.layout1.md-search.grid.disable-codeable > section > div.search-content > section > div.search-more-center-container > div.keyword-search-wrap > div > div.keyword-search-content,
