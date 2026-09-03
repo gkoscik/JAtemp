@@ -38,8 +38,7 @@
   font-size: clamp(2.75rem, 2.1rem + 2.6vw, 5rem) !important;
 }
 #app > div.md-area-overview.layout2.mg-bg.disable-delete.disable-codeable > div.area-overview-container.mg-container > div.media-content-v2.f-col > div > div.banner-content > div > div.view-more-content > p,
-#app > div.md-area-overview.layout2.mg-bg.disable-delete.disable-codeable > div.detail-contents-container > div.detail-contents.mg-container > div > div > div.site-p.center.normal.detail-item-description > p,
-#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > div.site-subtitle.desc > p {
+#app > div.md-area-overview.layout2.mg-bg.disable-delete.disable-codeable > div.detail-contents-container > div.detail-contents.mg-container > div > div > div.site-p.center.normal.detail-item-description > p {
   font-family: 'Jost', sans-serif !important;
   font-weight: 400 !important;
   font-size: clamp(1rem, 0.95rem + 0.2vw, 1.125rem) !important;
@@ -47,6 +46,18 @@
   color: #454a52 !important;
   max-width: 700px !important;
   margin: 0 auto !important;
+}
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > div.site-subtitle.desc > p,
+#app > div.md-house.layout1.mg-bg > div > div.site-subtitle.desc > p {
+  font-family: 'Jost', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: clamp(1rem, 0.95rem + 0.2vw, 1.125rem) !important;
+  line-height: 1.7 !important;
+  color: #ffffff !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  text-align: left !important;
 }
 .md-blog.layout9.mg-bg.has-full-layout.disable-codeable .blog-container.f-col .blog-content.layout-full .right-column a .content-wrapper h3,
 .md-blog.layout9.mg-bg.has-full-layout.disable-codeable .blog-container.f-col .blog-content.layout-full .right-column a .content-wrapper p,
@@ -80,7 +91,20 @@
 #app > div.md-house.layout1.mg-bg > div > ul > li > article > div > h3 > a:hover,
 #app > div.md-house.layout1.mg-bg > div > ul > li > article > div > h3 > a:focus,
 #app > div.md-house.layout1.mg-bg > div > ul > li > article > div > h3 > a:active,
-#app > div.md-house.layout1.mg-bg > div > ul > li > article > div > h3 > a * {
+#app > div.md-house.layout1.mg-bg > div > ul > li > article > div > h3 > a *,
+#app > div.md-house.layout1.mg-bg > div > ul > li > article > div > h3 > a:hover *,
+#app > div.md-house.layout1.mg-bg > div > ul > li > article > div > h3 > a:focus *,
+#app > div.md-house.layout1.mg-bg > div > ul > li > article > div > h3 > a:active *,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > h3 > a,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > h3 > a:link,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > h3 > a:visited,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > h3 > a:hover,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > h3 > a:focus,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > h3 > a:active,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > h3 > a *,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > h3 > a:hover *,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > h3 > a:focus *,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > h3 > a:active * {
   color: #ffffff !important;
 }
 #app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > div.house-basic.clearfix::before,
@@ -657,3 +681,91 @@
     -webkit-text-fill-color: #ffffff !important;
   }
 }
+
+/* Featured listings — beds/baths/sqft + address stay white after
+   Lofty injects those values (same race as .price-fav). All cards. */
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > div.house-basic.clearfix,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > div.house-basic.clearfix *,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > div.house-basic.clearfix > span.vertical-line,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > h3,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > h3 > a,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > h3 > a:link,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > h3 > a:visited,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > h3 > a:hover,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > h3 > a:focus,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > h3 > a:active,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > h3 > a *,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > h3 > a:hover *,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > h3 > a:focus *,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > ul > li > article > div > h3 > a:active *,
+#app > div.md-house.layout1.mg-bg .house-basic,
+#app > div.md-house.layout1.mg-bg .house-basic *,
+#app > div.md-house.layout1.mg-bg .house-basic .vertical-line,
+#app > div.md-house.layout1.mg-bg article h3,
+#app > div.md-house.layout1.mg-bg article h3 a,
+#app > div.md-house.layout1.mg-bg article h3 a:link,
+#app > div.md-house.layout1.mg-bg article h3 a:visited,
+#app > div.md-house.layout1.mg-bg article h3 a:hover,
+#app > div.md-house.layout1.mg-bg article h3 a:focus,
+#app > div.md-house.layout1.mg-bg article h3 a:active,
+#app > div.md-house.layout1.mg-bg article h3 a *,
+#app > div.md-house.layout1.mg-bg article h3 a:hover * {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Featured listings H2 — same clamp as every other section H2.
+   Lofty sets a smaller --mg-title-font-size / inner span size on
+   mobile, so font-size is forced on the title, the h2, and any
+   injected child at both mobile tiers. */
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > div.site-title,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > div.site-title > h2,
+#app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > div.site-title > h2 *,
+#app > div.md-house.layout1.mg-bg > div > div.site-title,
+#app > div.md-house.layout1.mg-bg > div > div.site-title > h2,
+#app > div.md-house.layout1.mg-bg > div > div.site-title > h2 * {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-weight: 400 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.01em !important;
+  font-size: clamp(2.1rem, 1.7rem + 1.6vw, 3.25rem) !important;
+}
+
+@media (max-width: 1080px) {
+  #app > div.md-house.layout1.mg-bg .house-basic,
+  #app > div.md-house.layout1.mg-bg .house-basic *,
+  #app > div.md-house.layout1.mg-bg article h3,
+  #app > div.md-house.layout1.mg-bg article h3 a,
+  #app > div.md-house.layout1.mg-bg article h3 a:hover,
+  #app > div.md-house.layout1.mg-bg article h3 a:hover *,
+  #app > div.md-house.layout1.mg-bg article h3 a * {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+  #app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > div.site-title > h2,
+  #app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > div.site-title > h2 *,
+  #app > div.md-house.layout1.mg-bg > div > div.site-title > h2,
+  #app > div.md-house.layout1.mg-bg > div > div.site-title > h2 * {
+    font-size: clamp(2.1rem, 1.7rem + 1.6vw, 3.25rem) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  #app > div.md-house.layout1.mg-bg .house-basic,
+  #app > div.md-house.layout1.mg-bg .house-basic *,
+  #app > div.md-house.layout1.mg-bg article h3,
+  #app > div.md-house.layout1.mg-bg article h3 a,
+  #app > div.md-house.layout1.mg-bg article h3 a:hover,
+  #app > div.md-house.layout1.mg-bg article h3 a:hover *,
+  #app > div.md-house.layout1.mg-bg article h3 a * {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+  #app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > div.site-title > h2,
+  #app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > div.site-title > h2 *,
+  #app > div.md-house.layout1.mg-bg > div > div.site-title > h2,
+  #app > div.md-house.layout1.mg-bg > div > div.site-title > h2 * {
+    font-size: clamp(2.1rem, 1.7rem + 1.6vw, 3.25rem) !important;
+  }
+}
+
