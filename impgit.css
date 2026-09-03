@@ -98,7 +98,9 @@
 #app > div.md-search.md-search-grid-list.template4.grid.disable-codeable > div.md-search-result.template4 > div.search-result-container > div.search-result.mg-scrollbar > div.explore-listings.mg-container.template4-listing-list,
 #app > div.md-search.md-search-grid-list.template4.grid.disable-codeable > div.md-search-result.template4 > div.search-result-container > div.search-result.mg-scrollbar > div.explore-nbr.mg-container.template4-listing-list,
 #app > div.md-search-grid-list.layout1.md-search.grid.disable-codeable > div.md-search-result.layout1 > div.normal.search-result-drawer.mg-scrollbar > div.drawer-body > div.search-result.mg-scrollbar > div.explore-listings.mg-container.broker-listing-list,
-#app > div.md-search-grid-list.layout1.md-search.grid.disable-codeable > div.md-search-result.layout1 > div.normal.search-result-drawer.mg-scrollbar > div.drawer-body > div.search-result.mg-scrollbar > div.explore-nbr.mg-container.broker-listing-list {
+#app > div.md-search-grid-list.layout1.md-search.grid.disable-codeable > div.md-search-result.layout1 > div.normal.search-result-drawer.mg-scrollbar > div.drawer-body > div.search-result.mg-scrollbar > div.explore-nbr.mg-container.broker-listing-list,
+#app > div.md-search-grid-list.layout1.md-search.grid > div > div.normal.search-result-drawer.mg-scrollbar > div.drawer-body > div.search-result.mg-scrollbar > div.explore-nbr.mg-container.broker-listing-list,
+#app > div.md-nbr-form.layout1.mg-bg {
   display: none !important;
 }
 #app > div.md-blog.layout9.mg-bg.has-full-layout.disable-codeable > div.blog-container.f-col > div.blog-footer {
@@ -137,7 +139,8 @@
 #app > div.md-house.layout1.mg-bg.disable-codeable > div.f-col > a,
 #app > div.md-house.layout1.mg-bg > div > a,
 #app > div.md-blog.layout9.mg-bg.has-full-layout > div > div.blog-footer,
-#app > div.md-blog.layout9.mg-bg.has-full-layout > div > div.blog-footer > a {
+#app > div.md-blog.layout9.mg-bg.has-full-layout > div > div.blog-footer > a,
+#app > div.md-form.layout2.mg-bg > div > div.info-right > form > div.submit-content {
   border-radius: 10px !important;
 }
 #app > div.md-search-grid-list.layout1.md-search.grid.disable-codeable > section > div.search-content > section > div.search-more-center-container > div.keyword-search-wrap > div > div.keyword-search-content,
