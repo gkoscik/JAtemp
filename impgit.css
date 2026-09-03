@@ -100,6 +100,7 @@
 #app > div.md-search-grid-list.layout1.md-search.grid.disable-codeable > div.md-search-result.layout1 > div.normal.search-result-drawer.mg-scrollbar > div.drawer-body > div.search-result.mg-scrollbar > div.explore-listings.mg-container.broker-listing-list,
 #app > div.md-search-grid-list.layout1.md-search.grid.disable-codeable > div.md-search-result.layout1 > div.normal.search-result-drawer.mg-scrollbar > div.drawer-body > div.search-result.mg-scrollbar > div.explore-nbr.mg-container.broker-listing-list,
 #app > div.md-search-grid-list.layout1.md-search.grid > div > div.normal.search-result-drawer.mg-scrollbar > div.drawer-body > div.search-result.mg-scrollbar > div.explore-nbr.mg-container.broker-listing-list,
+#app > div.md-search.md-search-grid-list.template4.grid > div > div.search-result-container > div.search-result.mg-scrollbar > div.explore-nbr.mg-container.template4-listing-list,
 #app > div.md-nbr-form.layout1.mg-bg {
   display: none !important;
 }
